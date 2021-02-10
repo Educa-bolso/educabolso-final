@@ -1,8 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --cor-primaria: #50bc22;
+  --cor-secundaria: #7159c1;
+  --cor-terciaria: #e1d9d9;
+}
+
 * {
   margin: 0;
   padding: 0;
   border: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
 input,
