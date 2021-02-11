@@ -2,17 +2,22 @@ import './styles.css';
 
 import orcamentoImg from '../../assets/image-orcamento.svg';
 
-const Card = () => {
+const Card = ({ fase, titulo, descricao, bloqueado, caminho }) => {
   return (
-    <div className='container-card'>
-      <img src={orcamentoImg} alt='' />
+    <a href={caminho}>
+      <div
+        className='container-card'
+        style={bloqueado && { opacity: 0.7, cursor: 'none' }}
+      >
+        <img src={orcamentoImg} alt='' />
 
-      <h5>
-        FASE 1: <span>ORÇAMENTO</span>
-      </h5>
+        <h5>
+          {fase}: <span>{titulo}</span>
+        </h5>
 
-      <p>Planejar para depois gastar é um hábito que é preciso exercitar!</p>
-    </div>
+        <p>{descricao}</p>
+      </div>
+    </a>
   );
 };
 

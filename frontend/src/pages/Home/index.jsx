@@ -1,49 +1,50 @@
-import { Container, Nav } from 'react-bootstrap';
 import Header from '../../components/Header';
 import Card from '../../components/Card';
+import Navigation from '../../components/Navigation';
+import Footer from '../../components/Footer';
+
+import Feedback from './components/Feedback';
+
+import conteudoCards from '../../conteudoCards';
 
 import './styles.css';
 
 const Home = () => {
   return (
-    <Container fluid>
-      <Container style={{ maxWidth: '1240px', margin: '0 auto' }}>
-        <Header />
+    <>
+      <Header />
+      <Navigation />
 
-        <Nav className='navegacao' variant='pills' defaultActiveKey='/home'>
-          <Nav.Item>
-            <Nav.Link className='links' href='/'>
-              Contas
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link className='links' href='#'>
-              Saiba mais
-            </Nav.Link>
-          </Nav.Item>
-        </Nav>
+      <main className='card-conteudo'>
+        <h4>Educação Financeira</h4>
 
-        <main className='card-conteudo'>
-          <h4>Educação Financeira</h4>
+        <p>
+          Saiba como a educação financeira pode te ajudar a entender como você
+          lida com o seu dinheiro!
+        </p>
 
-          <p>
-            Saiba como a educação financeira pode te ajudar a entender como você
-            lida com o seu dinheiro!
-          </p>
+        <p>Você já se perguntou, eu preciso mesmo comprar este produto?</p>
 
-          <p>Você já se perguntou, eu preciso mesmo comprar este produto?</p>
+        <button>Saiba mais</button>
+      </main>
 
-          <button>Saiba mais</button>
-        </main>
+      <h5>Fases</h5>
+      <section className='cards'>
+        {conteudoCards.map((item) => (
+          <Card
+            key={item.id}
+            fase={item.fase}
+            titulo={item.titulo}
+            descricao={item.descricao}
+            bloqueado={item.bloqueado}
+          />
+        ))}
+      </section>
 
-        <section className='cards'>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </section>
-      </Container>
-    </Container>
+      <Feedback />
+
+      <Footer />
+    </>
   );
 };
 

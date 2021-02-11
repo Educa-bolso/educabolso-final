@@ -1,0 +1,35 @@
+.feedback-title {
+  margin: 15px auto;
+}
+
+.feedback-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px;
+  background-color: #a6c898;
+  border-radius: 0 8px 0 8px;
+}
+
+.feedback-container p {
+  margin: 0;
+  color: #666;
+}
+
+.feedback-container a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor-secundaria);
+  color: #fff;
+  padding: 4px;
+  border-radius: 4px;
+  transition: 200ms;
+}
+
+.feedback-container a:hover {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+}
