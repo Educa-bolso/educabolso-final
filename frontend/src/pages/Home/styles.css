@@ -10,56 +10,6 @@
   color: var(--cor-secundaria);
 }
 
-.card-conteudo {
-  position: relative;
-  width: 50%;
-  margin: 25px auto;
-  padding: 16px;
-
-  border: 2px solid var(--cor-primaria);
-  border-radius: 8px;
-
-  background-image: url('../../assets/background-card.svg');
-  background-repeat: no-repeat;
-  background-position: 100% 100%;
-}
-
-.card-conteudo::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 8px;
-  height: 100%;
-  border-radius: 8px 0 0 8px;
-  background-color: var(--cor-secundaria);
-}
-
-.card-conteudo h4 {
-  color: #b2a5a5;
-  font-size: 18px;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.card-conteudo p {
-  font-size: 14px;
-  color: #000;
-  opacity: 67%;
-  font-weight: bold;
-}
-
-.card-conteudo button {
-  width: 120px;
-  height: 24px;
-  background-color: var(--cor-secundaria);
-  color: #fff;
-  font-weight: bold;
-  border-radius: 16px;
-}
-
 div.container h5 {
   color: #888;
 }
