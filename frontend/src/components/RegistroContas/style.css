@@ -1,0 +1,39 @@
+.card{
+    width: 160px;
+    height: 110px;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 0 auto;
+}
+
+.card img{
+    width: 15px;
+    height: 15px;
+    margin-left: auto;
+    display: block;    
+}
+
+.card h2{
+    color:#FFFFFF;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.card p{
+    color:#FFFFFF;
+    font-size: 12px;
+    font-weight: bolder;
+    margin: 2px 0px;
+}
+
+.card button{
+    background: #50BC22;
+    border-radius: 8px;
+    border: none;
+    width: 46px;
+    height: 22px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+}
+

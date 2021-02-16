@@ -1,0 +1,97 @@
+
+.contas{
+    width: 100%;
+    display: flex;
+    justify-content:flex-end;
+}
+
+.contas1{
+    margin-right: 8px;
+    position: relative;
+}
+
+.contas1::after{
+    content: "";
+    width: 2px;
+    height: 16px;
+    top: 0;
+    right: -5px;
+    position: absolute;
+    background: black;
+}
+
+.contas h3{
+    font-size: 14px;  
+    font-weight: bold;
+}
+
+.nenhum-cadastro p{
+    font-size: 16px;
+    font-weight: bold;
+    color: #977B7B;
+    text-align: center;
+}
+
+/* formulario */
+
+.formulario p{
+    text-align: right;
+}
+
+.formulario{
+    width: 100%;
+    max-width: 940px;
+    margin: 0 auto;
+    border: 2px solid #9AE06F;
+    padding: 20px;
+    border-radius: 8px;   
+}
+
+#button{
+    border: 1px solid #40B63E;
+    width: 50%;
+    display: block;
+    border-radius: 4px;
+    height: 36px;
+    background: #40B63E;
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;   
+    cursor: pointer;
+    margin: 0 auto !important;    
+}
+
+.input-form{
+    border: none !important;
+    border-bottom: 1px solid black !important;
+    border-radius: 0 !important;
+}
+
+.registro-contas{
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 12px;   
+    
+}
+
+@media(max-width:770px){
+    .registro-contas{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .registro-contas{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:415px){
+    .registro-contas{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
