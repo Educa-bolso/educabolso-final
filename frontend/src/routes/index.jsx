@@ -13,13 +13,13 @@ const Routes = () => {
     <BrowserRouter>
       <Switch>
         {/*<Route path='/' component={} /> */}
-        <Route path='/jogo' component={Home} />
+        <Route exact path='/jogo' component={Home} />
+        <Route path='/jogo/fase1' component={Fase1} />
+        <Route path='/jogo/fase2' component={Fase2} />
         <Route path='/contas' component={Contas} />
         <Route path='/saibamais' component={SaibaMais} />
         <Route path='/feedback' component={Feedback} />
         <Route path='/perfil' component={Perfil} />
-        <Route path='/jogo/fase1' component={Fase1} />
-        <Route path='/jogo/fase2' component={Fase2} />
       </Switch>
     </BrowserRouter>
   );

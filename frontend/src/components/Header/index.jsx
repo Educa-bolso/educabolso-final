@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { RiArrowDownSLine } from 'react-icons/ri';
 
 import './styles.css';
 
@@ -6,6 +7,11 @@ import avatarImg from '../../assets/avatar.svg';
 
 const Header = () => {
   const [saudacao, setSaudacao] = useState('');
+  const [profile, setProfile] = useState(false);
+
+  function toggleCaixaProfile() {
+    setProfile(!profile);
+  }
 
   useEffect(() => {
     let horaDoDia = new Date().getHours();
@@ -20,16 +26,29 @@ const Header = () => {
   }, []);
 
   return (
-    <header className='header-container'>
-      <span>Educabolso</span>
+    <>
+      <header className='header-content'>
+        <span>Educabolso</span>
 
-      <div className='nome-saudacao'>
-        <span>{saudacao}</span>
-        <h2>Caio Rodrigues</h2>
-      </div>
+        <div className='nome-saudacao'>
+          <span>{saudacao}</span>
+          <h2>Caio Rodrigues</h2>
+        </div>
 
-      <img src={avatarImg} alt='Caio Rodrigues' />
-    </header>
+        <div>
+          <img src={avatarImg} alt='Caio Rodrigues' />
+          <button onClick={() => toggleCaixaProfile()} className='botao-perfil'>
+            <RiArrowDownSLine size={25} color='#888' />
+          </button>
+        </div>
+      </header>
+
+      {profile && (
+        <div className='caixa-profile'>
+          <h1>Olá</h1>
+        </div>
+      )}
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 const conteudoCards = [
   {
     id: 1,
+    page: 'fase1',
     fase: 'FASE 1',
     titulo: 'ORÇAMENTO',
     descricao:
@@ -8,6 +9,7 @@ const conteudoCards = [
   },
   {
     id: 2,
+    page: 'fase2',
     fase: 'FASE 2',
     titulo: 'CRÉDITO',
     descricao:

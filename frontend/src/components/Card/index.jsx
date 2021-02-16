@@ -6,7 +6,7 @@ import orcamentoImg from '../../assets/image-orcamento.svg';
 
 const Card = ({ fase, titulo, descricao, bloqueado, caminho }) => {
   return (
-    <Link to='/jogo/fase1'>
+    <Link to={`/jogo/${caminho}`}>
       <div
         className='container-card'
         style={bloqueado && { opacity: 0.7, cursor: 'none' }}
