@@ -12,7 +12,6 @@ import SaibaMais from './components/SaibaMais';
 import conteudoCards from '../../conteudoCards';
 
 import './styles.css';
-import { useState } from 'react';
 
 const Home = () => {
   /*const [saibaMais, setSaibaMais] = useState(true);*/
