@@ -1,4 +1,6 @@
 import { Container } from 'react-bootstrap';
+import { Provider } from 'react-redux';
+import store from './store';
 
 import Routes from './routes';
 
@@ -10,7 +12,9 @@ function App() {
     <>
       <Container fluid>
         <Container style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <Routes />
+          <Provider store={store}>
+            <Routes />
+          </Provider>
         </Container>
       </Container>
     </>

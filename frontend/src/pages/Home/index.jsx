@@ -1,32 +1,29 @@
+import { useSelector } from 'react-redux';
+
 import Header from '../../components/Header';
 import Card from '../../components/Card';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 
 import Feedback from './components/Feedback';
+import CardMain from './components/CardMain';
+import SaibaMais from './components/SaibaMais';
 
 import conteudoCards from '../../conteudoCards';
 
 import './styles.css';
 
 const Home = () => {
+  /*const [saibaMais, setSaibaMais] = useState(true);*/
+
+  const saibaMais = useSelector((state) => state.saibaMaisReducer);
+
   return (
     <>
       <Header />
       <Navigation />
 
-      <main className='card-conteudo'>
-        <h4>Educação Financeira</h4>
-
-        <p>
-          Saiba como a educação financeira pode te ajudar a entender como você
-          lida com o seu dinheiro!
-        </p>
-
-        <p>Você já se perguntou, eu preciso mesmo comprar este produto?</p>
-
-        <button>Saiba mais</button>
-      </main>
+      <CardMain />
 
       <h5>Fases</h5>
       <section className='cards'>
@@ -42,6 +39,8 @@ const Home = () => {
       </section>
 
       <Feedback />
+
+      {saibaMais && <SaibaMais />}
 
       <Footer />
     </>

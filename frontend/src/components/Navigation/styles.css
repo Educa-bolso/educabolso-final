@@ -1,0 +1,29 @@
+.navegacao-container {
+  width: 100%;
+  margin: 12px;
+}
+
+.navegacao-lista {
+  width: 100%;
+
+  display: flex;
+}
+
+.navegacao-item {
+  margin-right: 12px;
+}
+
+.navegacao-item .navegacao-link {
+  font-weight: bold;
+  color: rgb(121, 118, 118);
+  text-decoration: none;
+}
+
+.navegacao-item .navegacao-link:hover,
+.navegacao-item .navegacao-link.active {
+  padding: 8px 4px;
+  background-color: var(--cor-secundaria);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+}
