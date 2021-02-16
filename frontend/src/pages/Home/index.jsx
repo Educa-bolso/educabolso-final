@@ -34,6 +34,7 @@ const Home = () => {
             titulo={item.titulo}
             descricao={item.descricao}
             bloqueado={item.bloqueado}
+            caminho={item.page}
           />
         ))}
       </section>
