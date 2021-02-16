@@ -1,36 +1,33 @@
-import { Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+import './styles.css';
 
 const Navigation = () => {
-  /*const links = document.querySelectorAll('.nav-link');
-
-  for (let link of links) {
-    if (window.location.pathname.includes(link.getAttribute('href'))) {
-      link.classList.add('button_active');
-    }
-  }*/
-
-  function activeFunction(e) {
-    e.setAttribute('active');
-  }
-
   return (
-    <Nav className='navegacao' variant='pills' defaultActiveKey='/home'>
-      <Nav.Item>
-        <Nav.Link className='links' onClick={activeFunction} href='/'>
-          Home
-        </Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link className='links' href='/contas'>
-          Contas
-        </Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link className='links' href='/saibamais'>
-          Saiba mais
-        </Nav.Link>
-      </Nav.Item>
-    </Nav>
+    <nav className='navegacao-container'>
+      <ul className='navegacao-lista'>
+        <li className='navegacao-item'>
+          <Link className='navegacao-link active' to='/jogo'>
+            Jogo
+          </Link>
+        </li>
+        <li className='navegacao-item'>
+          <Link className='navegacao-link' to='/contas'>
+            Contas
+          </Link>
+        </li>
+        <li className='navegacao-item'>
+          <Link className='navegacao-link' to='saibamais'>
+            Saiba Mais
+          </Link>
+        </li>
+        <li className='navegacao-item'>
+          <Link className='navegacao-link' to='feedback'>
+            Feedback
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

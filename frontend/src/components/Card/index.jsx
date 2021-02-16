@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
+
 import './styles.css';
 
 import orcamentoImg from '../../assets/image-orcamento.svg';
 
 const Card = ({ fase, titulo, descricao, bloqueado, caminho }) => {
   return (
-    <a href={caminho}>
+    <Link to='/jogo/fase1'>
       <div
         className='container-card'
         style={bloqueado && { opacity: 0.7, cursor: 'none' }}
@@ -17,7 +19,7 @@ const Card = ({ fase, titulo, descricao, bloqueado, caminho }) => {
 
         <p>{descricao}</p>
       </div>
-    </a>
+    </Link>
   );
 };
 

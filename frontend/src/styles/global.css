@@ -30,3 +30,8 @@ a {
 .button_active {
   background-color: var(--cor-secundaria);
 }
+
+ul,
+li {
+  list-style: none;
+}

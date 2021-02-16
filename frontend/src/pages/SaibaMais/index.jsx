@@ -2,16 +2,19 @@ import Header from '../../components/Header';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 
-const Contas = () => {
+import './styles.css';
+
+const SaibaMais = () => {
   return (
     <>
       <Header />
       <Navigation />
-      <h1>Contas</h1>
+
+      <h1>Saiba Mais</h1>
 
       <Footer />
     </>
   );
 };
 
-export default Contas;
+export default SaibaMais;
