@@ -53,10 +53,7 @@ const Contas = () => {
     </main> 
     </section>
 
-    <Footer/>
-      <h1>Contas</h1>
-
-      <Footer />
+    <Footer />
     </>
   );
 };
