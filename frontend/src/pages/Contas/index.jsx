@@ -4,6 +4,7 @@ import Header from '../../components/Header';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import RegistroContas from '../../components/RegistroContas';
+import './styles.css';
 
 const Contas = () => {
   return (
