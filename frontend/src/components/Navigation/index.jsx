@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import './styles.css';
 
 const Navigation = () => {
   const [pathname, setPathname] = useState('');
+
+  const profile = useSelector((state) => state.caixaProfile);
 
   useEffect(() => {
     setPathname(window.location.pathname);
@@ -52,6 +55,18 @@ const Navigation = () => {
           </Link>
         </li>
       </ul>
+
+      {profile && (
+        <div className='caixa-profile'>
+          <a className='caixa-profile-link' href='/perfil'>
+            Meu perfil
+          </a>
+
+          <a className='caixa-profile-link sair' href='/sair'>
+            Sair
+          </a>
+        </div>
+      )}
     </nav>
   );
 };

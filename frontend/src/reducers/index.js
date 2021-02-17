@@ -10,6 +10,14 @@ const saibaMaisReducer = (state = false, action) => {
   }
 };
 
-const reducers = combineReducers({ saibaMaisReducer });
+const caixaProfile = (state = false, action) => {
+  if (action.type === 'TOGGLECAIXA') {
+    return (state = !state);
+  } else {
+    return state;
+  }
+};
+
+const reducers = combineReducers({ saibaMaisReducer, caixaProfile });
 
 export default reducers;
