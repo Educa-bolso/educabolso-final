@@ -1,5 +1,7 @@
 .card-link {
+  width: 100%;
   cursor: pointer;
+  margin-left: 0 !important;
 }
 .container-card {
   width: 100%;

@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import './styles.css';
 
 const Navigation = () => {
+  const dispatch = useDispatch();
+
   const [pathname, setPathname] = useState('');
 
   const profile = useSelector((state) => state.caixaProfile);
@@ -12,6 +14,10 @@ const Navigation = () => {
   useEffect(() => {
     setPathname(window.location.pathname);
   }, [pathname]);
+
+  function fecharCaixaProfile() {
+    dispatch({ type: 'TOGGLECAIXA' });
+  }
 
   return (
     <nav className='navegacao-container'>
@@ -39,7 +45,7 @@ const Navigation = () => {
             className={`navegacao-link ${
               pathname === '/saibamais' ? 'active' : ''
             }`}
-            to='saibamais'
+            to='/saibamais'
           >
             Saiba Mais
           </Link>
@@ -49,7 +55,7 @@ const Navigation = () => {
             className={`navegacao-link ${
               pathname === '/feedback' ? 'active' : ''
             }`}
-            to='feedback'
+            to='/feedback'
           >
             Feedback
           </Link>
@@ -58,13 +64,17 @@ const Navigation = () => {
 
       {profile && (
         <div className='caixa-profile'>
-          <a className='caixa-profile-link' href='/perfil'>
+          <Link
+            onClick={() => fecharCaixaProfile()}
+            className='caixa-profile-link'
+            to='/perfil'
+          >
             Meu perfil
-          </a>
+          </Link>
 
-          <a className='caixa-profile-link sair' href='/sair'>
+          <button className='caixa-profile-link sair' href='/sair'>
             Sair
-          </a>
+          </button>
         </div>
       )}
     </nav>
