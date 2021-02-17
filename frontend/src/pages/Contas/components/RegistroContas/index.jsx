@@ -1,4 +1,4 @@
-import iconLixeira from '../../assets/lixeira.svg';
+import iconLixeira from '../../../../assets/lixeira.svg';
 import './style.css';
 
 const RegistroContas = () => {

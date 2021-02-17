@@ -1,9 +1,9 @@
-import { Form } from 'react-bootstrap';
-
 import Header from '../../components/Header';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-import RegistroContas from '../../components/RegistroContas';
+import RegistroContas from './components/RegistroContas';
+import FormularioContas from './components/FormularioContas';
+
 import './styles.css';
 
 const Contas = () => {
@@ -15,7 +15,7 @@ const Contas = () => {
       <section>
         <div className='contas'>
           <h3 className='contas1'>Contas registradas: 11</h3>
-          <h3>Gasto mensal: R$ 200,00</h3>
+          <h3 className='contas2'>Gasto mensal: R$ 200,00</h3>
         </div>
 
         <div className='registro-contas'>
@@ -29,28 +29,12 @@ const Contas = () => {
           <RegistroContas />
         </div>
 
-        <span className='nenhum-cadastro'>
+          <span className='nenhum-cadastro'>
           <p>Nenhuma conta cadastrada!</p>
-        </span>
+          </span>
 
-        <main>
-          <Form className='formulario'>
-            <p>X</p>
-            <Form.Group controlId='formBasicText'>
-              <Form.Label>Conta:</Form.Label>
-              <Form.Control className='input-form' type='text' />
-            </Form.Group>
-            <Form.Group controlId='formBasicText'>
-              <Form.Label>Valor:</Form.Label>
-              <Form.Control className='input-form' type='text' />
-            </Form.Group>
-            <button id='button' type='submit'>
-              Cadastrar
-            </button>
-          </Form>
-        </main>
-      </section>
-
+           <FormularioContas/>
+         </section>
       <Footer />
     </>
   );
