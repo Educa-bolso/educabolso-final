@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 const Feedback = () => {
@@ -11,7 +12,7 @@ const Feedback = () => {
           para a nossa plataforma!
         </p>
 
-        <a href='/feedback'>Sugerir!</a>
+        <Link to='/feedback'>Sugerir!</Link>
       </div>
     </>
   );

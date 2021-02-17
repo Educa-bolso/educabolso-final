@@ -29,6 +29,7 @@ const Fase1 = () => {
           <Link to='/jogo'>
             <FaChevronLeft size={20} color='fff' />
           </Link>
+          <p>Fase 1: ORÇAMENTO</p>
           <p>
             8
             <GoRuby size={30} color='var(--secundary-color)' />

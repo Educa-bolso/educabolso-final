@@ -1,4 +1,4 @@
-a {
+.card-link {
   cursor: pointer;
 }
 .container-card {
@@ -7,8 +7,16 @@ a {
   border-radius: 8px;
 }
 
-.container-card:hover {
+.card-link:hover .container-card {
   border-color: var(--cor-secundaria);
+}
+
+.card-link:hover .container-card p {
+  background-color: var(--cor-secundaria);
+}
+
+.card-link:hover .container-card h5 span {
+  background-color: var(--cor-primaria);
 }
 
 .container-card h5 {
@@ -34,8 +42,4 @@ a {
   background-color: #50bc22;
   margin: 0;
   border-radius: 0 8px 0 0;
-}
-
-.container-card p:hover {
-  background-color: var(--cor-secundaria);
 }

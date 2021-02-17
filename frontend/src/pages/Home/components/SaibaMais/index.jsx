@@ -1,4 +1,3 @@
-import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 
