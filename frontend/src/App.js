@@ -10,8 +10,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <>
-      <Container fluid>
-        <Container style={{ maxWidth: '1240px', margin: '0 auto' }}>
+      <Container fluid style={{ height: '100vh' }}>
+        <Container
+          style={{
+            maxWidth: '1240px',
+            margin: '0 auto',
+          }}
+        >
           <Provider store={store}>
             <Routes />
           </Provider>

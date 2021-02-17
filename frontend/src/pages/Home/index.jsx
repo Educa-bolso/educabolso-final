@@ -26,7 +26,7 @@ const Home = () => {
       <CardMain />
 
       <h5>Fases</h5>
-      <section className='cards'>
+      <section className='cards-jogo'>
         {conteudoCards.map((item) => (
           <Card
             key={item.id}

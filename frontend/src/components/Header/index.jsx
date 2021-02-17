@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 import { RiArrowDownSLine } from 'react-icons/ri';
+import { useDispatch } from 'react-redux';
 
 import './styles.css';
 
 import avatarImg from '../../assets/avatar.svg';
 
 const Header = () => {
+  const dispatch = useDispatch();
+
   const [saudacao, setSaudacao] = useState('');
-  const [profile, setProfile] = useState(false);
 
   function toggleCaixaProfile() {
-    setProfile(!profile);
+    dispatch({ type: 'TOGGLECAIXA' });
   }
 
   useEffect(() => {
@@ -42,12 +44,6 @@ const Header = () => {
           </button>
         </div>
       </header>
-
-      {profile && (
-        <div className='caixa-profile'>
-          <h1>Olá</h1>
-        </div>
-      )}
     </>
   );
 };
