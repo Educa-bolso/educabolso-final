@@ -31,7 +31,7 @@ module.exports = {
     return response.status(200).json(user);
   },
 
-  async login(request, response) {
+  async makingLogin(request, response) {
     try {
       const user = request.user;
 

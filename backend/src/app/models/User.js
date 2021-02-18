@@ -3,7 +3,7 @@ const db = require('../../config/database');
 module.exports = {
   userCreate(datas) {
     const query = `
-      INSERT INTO users (nome, email, senha, criado_em, atualizado_em)
+      INSERT INTO users (nome, email, password, criado_em, atualizado_em)
       VALUES
       ($1, $2, $3, $4, $5)
       RETURNING *
