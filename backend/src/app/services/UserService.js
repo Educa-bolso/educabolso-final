@@ -21,17 +21,38 @@ module.exports = {
     }
 
     const created_at = date(Date.now()).iso;
-    const updated_at = date(Date.now()).iso;
 
     const hashPassword = await hash(password, 8);
 
-    const datas = [name, email, hashPassword, created_at, updated_at];
+    const datas = [name, email, hashPassword, created_at];
 
-    const user = await User.userCreate(datas);
+    const userCreated = await User.userCreate(datas);
 
-    const userId = user.rows[0];
+    const user = userCreated.rows[0];
 
-    return userId;
+    delete user.password;
+
+    return user;
+  },
+
+  async updateUser(datas) {
+    const { userId } = datas;
+
+    const findUser = await User.findById(userId);
+
+    const user = findUser.rows[0];
+
+    if (!user) {
+      throw new Error('Usuário não existe!');
+    }
+
+    const userUpdate = await User.update(datas);
+
+    const userUpdated = userUpdate.rows[0];
+
+    delete userUpdated.senha;
+
+    return userUpdated;
   },
 
   async findUser(id) {
@@ -50,5 +71,19 @@ module.exports = {
     const user = findUser.rows[0];
 
     return user;
+  },
+
+  async deleteUser(id) {
+    const findUser = await User.findById(id);
+
+    const user = findUser.rows[0];
+
+    if (!user) {
+      throw new Error('Usuário não existe.');
+    }
+
+    await User.delete(user.id);
+
+    return;
   },
 };
