@@ -31,6 +31,8 @@ module.exports = {
 
       const user = await UserService.createNewUser(request.body);
 
+      delete user.senha;
+
       return response.status(201).json(user);
     } catch (e) {
       return response
