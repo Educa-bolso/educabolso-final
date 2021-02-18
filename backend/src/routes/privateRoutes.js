@@ -5,6 +5,7 @@ const { ensureAuthenticated } = require('../middlewares/ensureAuthentication');
 
 const UserController = require('../app/controllers/UserController');
 const AccountController = require('../app/controllers/AccountController');
+const ScoreController = require('../app/controllers/ScoreController');
 
 const privateRoutes = Router();
 
@@ -19,8 +20,16 @@ privateRoutes.put('/users', ensureAuthenticated, UserController.update);
 privateRoutes.delete('/users', ensureAuthenticated, UserController.delete);
 
 /* === ROUTES ACCOUNTS === */
-privateRoutes.post('/accounts', ensureAuthenticated, AccountController.create);
-
 privateRoutes.get('/accounts', ensureAuthenticated, AccountController.index);
+privateRoutes.post('/accounts', ensureAuthenticated, AccountController.create);
+privateRoutes.put('/accounts', ensureAuthenticated, AccountController.update);
+privateRoutes.delete(
+  '/accounts',
+  ensureAuthenticated,
+  AccountController.delete
+);
+
+/* === ROUTES SCORE === */
+privateRoutes.post('/score', ensureAuthenticated, ScoreController.create);
 
 module.exports = privateRoutes;

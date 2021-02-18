@@ -23,7 +23,7 @@ async function authenticateUser(user) {
     }
   );
 
-  delete user.password;
+  delete user.senha;
 
   return {
     user,
