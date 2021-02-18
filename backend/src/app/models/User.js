@@ -19,4 +19,12 @@ module.exports = {
 
     return db.query(query, [id]);
   },
+
+  findByEmail(email) {
+    const query = `
+      SELECT * FROM users WHERE email = $1
+    `;
+
+    return db.query(query, [email]);
+  },
 };

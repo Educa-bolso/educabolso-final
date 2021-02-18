@@ -1,11 +1,26 @@
+const { validationResult } = require('express-validator');
+
 const { findById } = require('../models/User');
 const UserService = require('../services/UserServices');
+const AuthenticateUserService = require('../services/AuthenticateUserService');
 
 module.exports = {
   async create(request, response) {
-    const userId = await UserService.createNewUser(request.body);
+    try {
+      const errors = validationResult(request);
 
-    return response.json(userId);
+      if (!errors.isEmpty()) {
+        return response.status(400).json({ errors: errors.array() });
+      }
+
+      const user = await UserService.createNewUser(request.body);
+
+      return response.status(201).json(user);
+    } catch (e) {
+      return response
+        .status(401)
+        .json({ error: `${e}`.replace('Error: ', '') });
+    }
   },
 
   async findOne(request, response) {
@@ -14,5 +29,19 @@ module.exports = {
     const user = await UserService.findUser(id);
 
     return response.status(200).json(user);
+  },
+
+  async login(request, response) {
+    try {
+      const user = request.user;
+
+      const userWithToken = await AuthenticateUserService.authenticateUser(
+        user
+      );
+
+      return response.status(200).json(userWithToken);
+    } catch (e) {
+      return response.status(401).json({ error: `${e}` });
+    }
   },
 };
