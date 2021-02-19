@@ -18,6 +18,17 @@ const caixaProfile = (state = false, action) => {
   }
 };
 
-const reducers = combineReducers({ saibaMaisReducer, caixaProfile });
+const abrirFormulario = (state = false, action) => {
+  if (action.type === 'ABRIRFORMULARIO') {
+    return (state = action.value);
+  } else if (action.type === 'FECHARFORMULARIO') {
+    return (state = false);
+  } else {
+    return state;
+  }
+};
+
+
+const reducers = combineReducers({ saibaMaisReducer, caixaProfile, abrirFormulario });
 
 export default reducers;
