@@ -15,35 +15,34 @@ function Menu() {
     
     return(
         <div id="menu">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                {/*<img id="logo" src={logo1}/>*/}<h3>EducaBolso</h3>
-                <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-                <ul class="nav">
+            <nav>
+                {/*<img id="logo" src={logo1}/>*/}<h4>EducaBolso</h4>
+                <div className="opcao">
                 
-                <li id="barra" class="dropdown">
-                    <a id="navegar" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Quem Somos</a>
-                    <div id="cardmenu" class="dropdown-menu">
+                <ul className="nav">
+                
+                <li id="barra" className="dropdown">
+                    <a id="navegar" className="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Quem Somos</a>
+                    <div id="cardmenu" className="dropdown-menu">
                     <h4>Lorem ipsum tempor ligula gravida lacinia sociosqu nulla cubilia risus habitant, fringilla semper ut taciti neque lobortis conubia nam. diam pellentesque arcu vel malesuada ipsum et, purus per nisl curabitur hendrerit etiam eu, hac nam feugiat donec elementum. nunc tristique lacus elementum himenaeos quisque molestie nostra accumsan donec inceptos ultrices fames, conubia curabitur gravida placerat lacinia metus ullamcorper convallis nam vivamus interdum. eget etiam sociosqu placerat nibh non imperdiet morbi molestie mattis rhoncus mattis accumsan placerat fermentum integer, etiam curabitur tellus varius id erat libero platea tristique ligula suspendisse placerat erat. </h4>
                     </div>
                 </li>
-                <li id="barra" class="dropdown">
-                    <a  id="navegar" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Nossa Missão</a>
-                    <div id="cardmenu" class="dropdown-menu">
+                <li id="barra" className="dropdown">
+                    <a  id="navegar" className="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Nossa Missão</a>
+                    <div id="cardmenu" className="dropdown-menu">
                     <h4>Lorem ipsum tempor ligula gravida lacinia sociosqu nulla cubilia risus habitant, fringilla semper ut taciti neque lobortis conubia nam. diam pellentesque arcu vel malesuada ipsum et, purus per nisl curabitur hendrerit etiam eu, hac nam feugiat donec elementum. nunc tristique lacus elementum himenaeos quisque molestie nostra accumsan donec inceptos ultrices fames, conubia curabitur gravida placerat lacinia metus ullamcorper convallis nam vivamus interdum. eget etiam sociosqu placerat nibh non imperdiet morbi molestie mattis rhoncus mattis accumsan placerat fermentum integer, etiam curabitur tellus varius id erat libero platea tristique ligula suspendisse placerat erat. </h4>
                     </div>
                 </li>
-                <li class="dropdown">
-                    <a id="navegar" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Contato</a>
-                    <div id="contato" class="dropdown-menu">
+                <li className="dropdown">
+                    <a id="navegar" className="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Contato</a>
+                    <div id="contato" className="dropdown-menu">
                     <br/><br/>
                     <h4> Entre em contato pelo nosso<br/> e-mail: educabolso1@gmail.com</h4>
                     </div>
                 </li>
             </ul>
             </div>
+           <div className="logar">
             <ul class="nav" >
                 <li id="barra">
                 <button id="entrar" onClick={()=> setModalIsOpenLogin(true)}>Login</button>
@@ -65,8 +64,10 @@ function Menu() {
                     </Modal>
                 </div>
                 </li>
-            </ul>
+                </ul>
+                </div>
             </nav>
+            
         
         </div>
         

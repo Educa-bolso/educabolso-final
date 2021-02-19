@@ -1,18 +1,22 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
-}
-html,
-body {
-  font-family: 'Roboto', sans-serif;
-}
-
 #menu{
-    width: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+
+
     
 }
+/*.opcao{
+  margin-left: 20vw;
+  align-items: center;
+}
+.logar{
+  position: absolute;
+  margin-right: 1vw;
+  width: 20vw;
+  float:right;
+  justify-content: flex-end;
+}*/
 
 #cardmenu{
     border: solid 2px;
@@ -78,8 +82,27 @@ body {
     text-decoration: none;
 }
 
+@media (max-width: 800px) {
+  #menu{
+    width: 100vw;
+  }
+}
+
+@media (max-width: 934px) {
+  #menu {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 490px) {
+  #menu {
+    width: 100vw;
+  }
+}
+
+
 /*Formularios*/
-form {
+.formLogin {
     width: 251px;
     height: 331px;
     margin: 50px auto;
@@ -102,13 +125,13 @@ form {
     height: 450px;
   } 
   
-  .form-control {
+  .formularios {
     width: 198px;
     height: 33px;
    
     font-size: 10px;
     border: none;
-   border-bottom: solid 1px;
+    border-bottom: solid 1px;
     border-color: #9AE06F;
     color: #7159c1;
   }
@@ -123,6 +146,7 @@ form {
     background:  #9AE06F;
     border:none;
     outline: none;
+    text-align: center;
     
   }
   .botao:hover {

@@ -3,35 +3,35 @@ import game from '../../../assets/game.png';
 import calculadora from '../../../assets/calculadora.png';
 import bau from '../../../assets/bau.png';
 import Menu from '../components/Menu';
-import Footer from '../components/Footer';
+import Footer from '../../../components/Footer';
 
 
 function Inicial(){
     return(
-        <div class="container">
+        <div className="container">
             <header>
                 <Menu/>
             </header>
-            <div class="card-deck">
-                <div class="card" id="card">
-                    <img class="card-img-top" id="img1" src={calculadora} alt="Imagem de capa do card"/>
-                <div class="card-body">
-                <h3 class="card-text">Aprenda a administrar o seu dinheiro de uma forma simples e divertida.</h3>
+            <div className="card-deck" id="bloco">
+                <div id="cartao">
+                    <img id="calcu" src={calculadora} alt="Calculadora"/>
+                <div>
+                <h3>Aprenda a administrar o seu dinheiro de uma forma simples e divertida.</h3>
             </div>
             
         </div>
-        <div class="card" id="card">
-                <img class="card-img-top" id="img" src={game} alt="Imagem de capa do card"/>
+        <div  id="cartao">
+                <img id="imgInicial" src={game} alt="game"/>
             <div/>
-            <div class="card-body">
-                <h3 class="card-text">Com uma metodologia gameficada.</h3>
+            <div>
+                <h3>Com uma metodologia gameficada.</h3>
             </div>
             
         </div>
-        <div class="card" id="card">
-                <img class="card-img-top" id="img" src={bau} alt="Imagem de capa do card"/>
-            <div class="card-body">
-                <h3 class="card-text">Ganhe ou perca moedas de acordo com suas respostas e troque elas por benefícios.</h3>
+        <div className="cartaoBau" id="cartao">
+                <img id="imgInicial" src={bau} alt="bau de moedas"/>
+            <div>
+                <h3>Ganhe ou perca moedas de acordo com suas respostas e troque elas por benefícios.</h3>
             </div>
         </div>
         </div>

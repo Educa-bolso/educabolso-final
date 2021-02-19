@@ -1,0 +1,52 @@
+.formulario{
+    
+    border: solid 2px;
+    border-color:#9AE06F;
+    margin-top: 5vh;
+    max-width: 700px;
+    width: 100%;
+    min-height: 500px;
+    
+    height: 100%;
+    border-radius: 1vh;
+}
+
+.entrada{
+    max-width: 600px;
+    width: 100%;
+    border:none;
+    border-bottom: solid 2px;
+    border-color: #9AE06F;
+ }
+
+ .data{
+     border:solid 2px;
+     border-color: #9AE06F;
+
+ }
+
+ #botao{
+    width: 156px;
+    height: 36px;
+    text-align: center;
+    border: none;
+    border-radius: 1vh;
+    background-color: #40B63E;
+    color: #fff;
+    font-weight: bolder;
+    margin: 16px auto;
+    display: block;
+    
+    }
+
+    .texto{
+        margin-top: 2vh;
+        color:#7159C1;
+    }
+
+    #titulo{
+        text-align:center;
+        color:#979797;
+    }
+
+    

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {Formik, Field, Form} from 'formik';
 import schema from './schema';
 
@@ -14,19 +15,19 @@ function Login(){
                 email: '',
                 senha: '',
             }} render={({values, errors})=>(
-                <Form id="form1">
+                <Form className="formLogin" id="form1">
                 <h2>Login</h2>
-                <div class="form-group">
-                    <Field class="form-control mb-4 mt-4" type="email" name="email"  placeholder="Digite seu Email" required="" />
+                <div className="form-group">
+                    <Field className="formularios mb-4 mt-4" type="email" name="email"  placeholder="Digite seu Email" required="" />
                     {errors.email &&(
                         <span>{errors.email}</span>
                     )}
-                    <Field class="form-control" type="password" name="senha"  placeholder="Digite sua Senha" required=""  />
+                    <Field className="formularios" type="password" name="senha"  placeholder="Digite sua Senha" required=""  />
                     {errors.senha &&(
                         <span>{errors.senha}</span>
                     )}
                 </div>
-                <input  id="button" class="botao" type="submit" value="Entrar"/>
+                <Link to="/jogo" className="botao" type="submit">Entrar</Link>
             </Form>
             )}/>
         </div>
