@@ -4,12 +4,25 @@ import Cadastro from './Formulario/Cadastro';
 import Login from './Formulario/Login';
 import './styles.css';
 //import logo1 from '../../../../assets/logo1.gif';
+import { useSelector, useDispatch } from 'react-redux';
 
 Modal.setAppElement('#root');
 
 function Menu() {
   const [modalIsOpenLogin, setModalIsOpenLogin] = useState(false);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const dispatch = useDispatch();
+
+  const modal = useSelector((state) => state.formularioCadastroReducer);
+
+  /*const [modalIsOpen, setModalIsOpen] = useState(false);*/
+
+  function abrirModal() {
+    dispatch({ type: 'ABRIRCADASTRO' });
+  }
+
+  function fecharModal() {
+    dispatch({ type: 'FECHARCADASTRO' });
+  }
 
   return (
     <div id='menu'>
@@ -122,13 +135,13 @@ function Menu() {
               </div>
             </li>
             <li>
-              <button id='cadastro' onClick={() => setModalIsOpen(true)}>
+              <button id='cadastro' onClick={() => abrirModal()}>
                 Cadastro
               </button>
               <div>
-                <Modal isOpen={modalIsOpen}>
+                <Modal isOpen={modal}>
                   <div>
-                    <button id='fechar' onClick={() => setModalIsOpen(false)}>
+                    <button id='fechar' onClick={() => fecharModal()}>
                       X
                     </button>
                   </div>

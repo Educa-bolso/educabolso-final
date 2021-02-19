@@ -1,52 +1,45 @@
-.formulario{
-    
-    border: solid 2px;
-    border-color:#9AE06F;
-    margin-top: 5vh;
-    max-width: 700px;
-    width: 100%;
-    min-height: 900px; /*ajustei aqui pq o form ficou pequeno e os conteudos para fora dele*/
-    
-    height: 100%;
-    border-radius: 1vh;
+.formulario-perfil {
+  border: solid 2px;
+  border-color: #9ae06f;
+  max-width: 700px;
+  width: 100%;
+  margin: 16px auto;
+  padding: 8px;
+  min-height: 400px; /*ajustei aqui pq o form ficou pequeno e os conteudos para fora dele*/
+
+  border-radius: 1vh;
 }
 
-.entrada{
-    max-width: 600px;
-    width: 100%;
-    border:none;
-    border-bottom: solid 2px;
-    border-color: #9AE06F;
- }
+.entrada {
+  width: 100%;
+  border: none;
+  border-bottom: solid 1px;
+  border-color: #9ae06f;
+}
 
- .data{
-     border:solid 2px;
-     border-color: #9AE06F;
+.data {
+  border: solid 2px;
+  border-color: #9ae06f;
+}
 
- }
+#botao {
+  width: 156px;
+  height: 36px;
+  text-align: center;
+  border: none;
+  border-radius: 1vh;
+  background-color: #40b63e;
+  color: #fff;
+  font-weight: bolder;
+  margin: 16px auto;
+  display: block;
+}
 
- #botao{
-    width: 156px;
-    height: 36px;
-    text-align: center;
-    border: none;
-    border-radius: 1vh;
-    background-color: #40B63E;
-    color: #fff;
-    font-weight: bolder;
-    margin: 16px auto;
-    display: block;
-    
-    }
+.texto {
+  color: #7159c1;
+}
 
-    .texto{
-        margin-top: 2vh;
-        color:#7159C1;
-    }
-
-    #titulo{
-        text-align:center;
-        color:#979797;
-    }
-
-    
+#titulo {
+  text-align: center;
+  color: #979797;
+}

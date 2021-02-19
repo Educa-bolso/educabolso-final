@@ -16,13 +16,13 @@ const Routes = () => {
       <Switch>
         <Route exact path='/' component={Inicial} />
 
-        <RoutesPrivate path='/jogo' component={Home} />
-        <RoutesPrivate path='/jogo/fase1' component={Fase1} />
-        <RoutesPrivate path='/jogo/fase2' component={Fase2} />
-        <RoutesPrivate path='/contas' component={Contas} />
-        <RoutesPrivate path='/saibamais' component={SaibaMais} />
-        <RoutesPrivate path='/feedback' component={Feedback} />
-        <RoutesPrivate path='/perfil' component={Perfil} />
+        <RoutesPrivate exact path='/jogo' component={Home} />
+        <RoutesPrivate exact path='/jogo/fase1' component={Fase1} />
+        <RoutesPrivate exact path='/jogo/fase2' component={Fase2} />
+        <RoutesPrivate exact path='/contas' component={Contas} />
+        <RoutesPrivate exact path='/saibamais' component={SaibaMais} />
+        <RoutesPrivate exact path='/feedback' component={Feedback} />
+        <RoutesPrivate exact path='/perfil' component={Perfil} />
       </Switch>
     </BrowserRouter>
   );

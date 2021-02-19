@@ -1,17 +1,56 @@
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
 import schemaCadastro from './schemaCadastro';
+import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+
+import '../styles.css';
 
 import api from '../../../../../services/api';
 
 function Cadastro() {
+  const dispatch = useDispatch();
+
+  function fecharFormularioCadastro() {
+    dispatch({ type: 'FECHARCADASTRO' });
+  }
+
+  const cadastroRealizado = () =>
+    toast('Cadastro realizado com sucesso!', {
+      position: 'top-right',
+      className: 'toast-background',
+      autoClose: 3500,
+      style: {
+        background: '#53b63f',
+        color: '#FFF',
+      },
+      progressStyle: { background: '#7159c1' },
+    });
+
   async function onSubmit(values, actions) {
     try {
       await api.post('/cadastro', values);
 
       values.nome = '';
+      values.email = '';
+      values.senha = '';
+      values.confirmarSenha = '';
+
+      cadastroRealizado();
+      fecharFormularioCadastro();
     } catch (error) {
-      console.log(error.response.data.error);
+      const errorNotification = () =>
+        toast(`${error.response.data.error}`, {
+          position: 'top-right',
+          className: 'toast-background',
+          autoClose: 2500,
+          style: {
+            backgroundColor: '#b93737',
+            color: '#FFF',
+          },
+          progressStyle: { background: '#FFF' },
+        });
+      return errorNotification();
     }
   }
 
@@ -28,7 +67,7 @@ function Cadastro() {
         }}
         render={({ values, errors }) => (
           <Form className='formLogin' id='form2'>
-            <h2>Cadastro</h2>whas
+            <h2>Cadastro</h2>
             <div className='form-group'>
               <Field
                 className='formularios mb-4 mt-2'
@@ -57,8 +96,8 @@ function Cadastro() {
               <Field
                 className='formularios'
                 type='password'
-                name='confirmarsenha'
-                placeholder=' Confirme sua Senha '
+                name='confirmarSenha'
+                placeholder='Confirme sua Senha '
                 required=''
               />
               {errors.confirmarSenha && <span>{errors.confirmarsenha}</span>}

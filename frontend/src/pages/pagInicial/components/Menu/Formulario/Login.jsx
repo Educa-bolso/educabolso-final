@@ -1,6 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Formik, Field, Form } from 'formik';
+import { toast } from 'react-toastify';
+
 import schema from './schema';
 
 import api from '../../../../../services/api';
@@ -14,7 +16,7 @@ function Login() {
 
       const token = response.data.token;
       const userId = response.data.user.id;
-      const userNome = response.data.user.email;
+      const userNome = response.data.user.nome;
 
       sessionStorage.setItem('@token', token);
       sessionStorage.setItem('@userId', userId);
@@ -25,7 +27,18 @@ function Login() {
 
       history.push('/jogo');
     } catch (error) {
-      console.log(error.response.data.error);
+      const errorNotification = () =>
+        toast(`${error.response.data.error}`, {
+          position: 'top-right',
+          className: 'toast-background',
+          autoClose: 2500,
+          style: {
+            backgroundColor: '#b93737',
+            color: '#FFF',
+          },
+          progressStyle: { background: '#FFF' },
+        });
+      return errorNotification();
     }
   }
 
