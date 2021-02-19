@@ -30,6 +30,7 @@ privateRoutes.delete(
 );
 
 /* === ROUTES SCORE === */
+privateRoutes.get('/score', ensureAuthenticated, ScoreController.index);
 privateRoutes.post('/score', ensureAuthenticated, ScoreController.create);
 
 module.exports = privateRoutes;
