@@ -12,7 +12,7 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path='/' component={Inicial} /> 
+        <Route exact path='/' component={Inicial} />
         <Route path='/jogo' component={Home} />
         <Route path='/jogo/fase1' component={Fase1} />
         <Route path='/jogo/fase2' component={Fase2} />
