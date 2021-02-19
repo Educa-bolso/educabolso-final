@@ -10,7 +10,7 @@ div.container h5 {
   color: #888;
 }
 
-.cards-jogo {
+.cards-jogo-container {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -25,13 +25,13 @@ div.container h5 {
 
 /* quando a largura for menor ou igual a 934px */
 @media (max-width: 934px) {
-  .cards-jogo {
+  .cards-jogo-container {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 490px) {
-  .cards-jogo {
+  .cards-jogo-container {
     grid-template-columns: 1fr;
   }
 }
