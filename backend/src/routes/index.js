@@ -12,10 +12,10 @@ routes.use(privateRoutes);
 // register user
 routes.post(
   '/cadastro',
-  body('name').isString().isLength({ min: 3 }),
+  body('nome').isString().isLength({ min: 3 }),
   body('email').isString().isEmail(),
-  body('password').isString(),
-  body('repeatPassword').isString(),
+  body('senha').isString(),
+  body('confirmarSenha').isString(),
   UserController.create
 );
 
