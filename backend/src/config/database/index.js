@@ -1,9 +1,9 @@
-const mysql = require('mysql');
+const { Pool } = require('pg');
 
-module.exports = mysql.createPool({
-  host: 'localhost',
-  port: '3306',
+module.exports = new Pool({
+  port: 5432,
   database: 'educabolso',
-  user: 'root',
-  password: '',
+  user: 'postgres',
+  password: 'docker',
+  host: 'localhost',
 });

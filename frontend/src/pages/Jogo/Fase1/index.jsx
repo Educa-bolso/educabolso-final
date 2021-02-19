@@ -21,6 +21,11 @@ const Fase1 = () => {
   const [respostaCorreta, setRespostaCorreta] = useState(false);
   const [respostaIncorreta, setRespostaIncorreta] = useState(false);
 
+  function fecharFeedbackQuestao() {
+    setRespostaIncorreta(false);
+    setQuestaoAtual(questaoAtual + 1);
+  }
+
   function manipulandoResposta(resposta, e) {
     setBarraProgresso(barraProgresso + calculoPorcentagem);
 
@@ -31,16 +36,26 @@ const Fase1 = () => {
     } else {
       e.target.classList.add('incorreta');
       setRespostaIncorreta(true);
+
+      setTimeout(() => {}, 3000);
     }
 
     let proximaQuestao = questaoAtual + 1;
 
     if (proximaQuestao < dadosQuestoes.length) {
-      setTimeout(() => {
-        setQuestaoAtual(proximaQuestao);
-        setRespostaCorreta(false);
-        setRespostaIncorreta(false);
-      }, 1000);
+      if (resposta) {
+        setTimeout(() => {
+          setRespostaCorreta(false);
+          setQuestaoAtual(proximaQuestao);
+        }, 1000);
+      }
+
+      if (!resposta) {
+        setTimeout(() => {
+          setRespostaIncorreta(false);
+          setQuestaoAtual(proximaQuestao);
+        }, 5000);
+      }
     } else {
       alert('Questões finalizadas');
     }
@@ -112,9 +127,9 @@ const Fase1 = () => {
               <span>A resposta correta é:</span> Acúmulo de receita por um ano.
             </p>
 
-            <Link>
+            <button onClick={() => fecharFeedbackQuestao()}>
               <FaWindowClose size={30} color='#888' />
-            </Link>
+            </button>
           </div>
         </div>
       )}

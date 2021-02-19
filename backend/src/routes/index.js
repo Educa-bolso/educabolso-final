@@ -1,9 +1,25 @@
-const express = require('express');
+const { Router } = require('express');
+const { body } = require('express-validator');
 
-const routes = express.Router();
+const privateRoutes = require('./privateRoutes');
 
-const userController = require('../app/controllers/userController');
+const sessionValidator = require('../middlewares/session');
+const UserController = require('../app/controllers/UserController');
 
-routes.get('/', userController.test);
+const routes = Router();
+routes.use(privateRoutes);
+
+// register user
+routes.post(
+  '/cadastro',
+  body('name').isString().isLength({ min: 3 }),
+  body('email').isString().isEmail(),
+  body('password').isString(),
+  body('repeatPassword').isString(),
+  UserController.create
+);
+
+// making login
+routes.post('/login', sessionValidator.login, UserController.makingLogin);
 
 module.exports = routes;
