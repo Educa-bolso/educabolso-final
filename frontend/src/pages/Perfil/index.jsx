@@ -6,7 +6,9 @@ import schemaPerfil from './schemaPerfil';
 import './styles.css';
 
 const Perfil = () => {
-  function onSubmit(values, actions) {}
+  function onSubmit(values, actions) {
+    console.log(values);
+  }
 
   return (
     <>
@@ -21,7 +23,6 @@ const Perfil = () => {
             initialValues={{
               nome: '',
               sobrenome: '',
-              email: '',
               endereco: '',
               dataNascimento: '',
               autonomo: '',
@@ -51,19 +52,7 @@ const Perfil = () => {
                 <br />
                 {errors.sobrenome && <span>{errors.sobrenome}</span>}
                 <br />
-                <label className='texto' for='email'>
-                  E-mail:
-                </label>
-                <br />
-                <Field
-                  className='entrada'
-                  id='email'
-                  name='email'
-                  type='email'
-                />
-                <br />
-                {errors.email && <span>{errors.email}</span>}
-                <br />
+
                 <label className='texto' for='endereco'>
                   Endereço:
                 </label>
@@ -85,7 +74,7 @@ const Perfil = () => {
                 <Field
                   id='data_nascimento'
                   className='data'
-                  name='dataNascimento'
+                  name='data_nascimento'
                   type='date'
                 />
                 <br />
@@ -97,7 +86,7 @@ const Perfil = () => {
                 <Field
                   type='radio'
                   id='opc1'
-                  name='autonomo'
+                  name='tipo_servico'
                   value='autonomo'
                 />
                 <label className='texto' for='opc1'>
@@ -106,7 +95,7 @@ const Perfil = () => {
                 <br />
                 {errors.autonomo && <span>{errors.autonomo}</span>}
                 <br />
-                <Field type='radio' id='opc2' name='clt' value='clt' />
+                <Field type='radio' id='opc2' name='tipo_servico' value='clt' />
                 <label className='texto' for='opc2'>
                   Regime CLT
                 </label>
