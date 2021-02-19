@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import './styles.css';
 
 const Navigation = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const [pathname, setPathname] = useState('');
@@ -16,6 +17,12 @@ const Navigation = () => {
   }, [pathname]);
 
   function fecharCaixaProfile() {
+    dispatch({ type: 'TOGGLECAIXA' });
+  }
+
+  function sairDaAplicacao() {
+    sessionStorage.clear();
+    history.push('/');
     dispatch({ type: 'TOGGLECAIXA' });
   }
 
@@ -72,7 +79,11 @@ const Navigation = () => {
             Meu perfil
           </Link>
 
-          <button className='caixa-profile-link sair' href='/sair'>
+          <button
+            onClick={() => sairDaAplicacao()}
+            className='caixa-profile-link sair'
+            href='/sair'
+          >
             Sair
           </button>
         </div>

@@ -1,6 +1,5 @@
 const { Router } = require('express');
 
-const authentication = require('../middlewares/ensureAuthentication');
 const { ensureAuthenticated } = require('../middlewares/ensureAuthentication');
 
 const UserController = require('../app/controllers/UserController');
@@ -19,7 +18,7 @@ privateRoutes.put('/users', ensureAuthenticated, UserController.update);
 // delete user
 privateRoutes.delete('/users', ensureAuthenticated, UserController.delete);
 
-/* === ROUTES ACCOUNTS === */
+/* === ROUTES PRIVATE ACCOUNTS === */
 privateRoutes.get('/accounts', ensureAuthenticated, AccountController.index);
 privateRoutes.post('/accounts', ensureAuthenticated, AccountController.create);
 privateRoutes.put('/accounts', ensureAuthenticated, AccountController.update);
@@ -29,7 +28,8 @@ privateRoutes.delete(
   AccountController.delete
 );
 
-/* === ROUTES SCORE === */
+/* === ROUTES PRIVATE SCORE === */
+privateRoutes.get('/score', ensureAuthenticated, ScoreController.index);
 privateRoutes.post('/score', ensureAuthenticated, ScoreController.create);
 
 module.exports = privateRoutes;

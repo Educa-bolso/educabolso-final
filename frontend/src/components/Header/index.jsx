@@ -9,6 +9,8 @@ import avatarImg from '../../assets/avatar.svg';
 const Header = () => {
   const dispatch = useDispatch();
 
+  const nome = sessionStorage.getItem('@userNome');
+
   const [saudacao, setSaudacao] = useState('');
 
   function toggleCaixaProfile() {
@@ -34,7 +36,7 @@ const Header = () => {
 
         <div className='nome-saudacao'>
           <span>{saudacao}</span>
-          <h2>Caio Rodrigues</h2>
+          <h2>{nome}</h2>
         </div>
 
         <div>

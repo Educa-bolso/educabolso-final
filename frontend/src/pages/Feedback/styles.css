@@ -1,0 +1,30 @@
+#formu {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formulario-feedback {
+  max-width: 550px;
+  width: 100%;
+  max-height: 250px;
+  height: 100%;
+  border: solid 2px;
+  border-color: #9ae06f;
+  border-radius: 5%;
+}
+#texto {
+  color: #7159c1;
+  font-size: 17px;
+}
+
+#botao {
+  width: 156px;
+  height: 36px;
+  border: none;
+  border-radius: 1vh;
+  background-color: #40b63e;
+  color: #fff;
+  font-weight: bolder;
+}

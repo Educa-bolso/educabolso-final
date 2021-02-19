@@ -1,7 +1,8 @@
-.card-link {
+.card-link-container {
   width: 100%;
   cursor: pointer;
   margin-left: 0 !important;
+  text-decoration: none !important;
 }
 .container-card {
   width: 100%;
@@ -9,15 +10,15 @@
   border-radius: 8px;
 }
 
-.card-link:hover .container-card {
+.card-link-container:hover .container-card {
   border-color: var(--cor-secundaria);
 }
 
-.card-link:hover .container-card p {
+.card-link-container:hover .container-card p {
   background-color: var(--cor-secundaria);
 }
 
-.card-link:hover .container-card h5 span {
+.card-link-container:hover .container-card h5 span {
   background-color: var(--cor-primaria);
 }
 

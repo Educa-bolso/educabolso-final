@@ -1,0 +1,45 @@
+.formulario-perfil {
+  border: solid 2px;
+  border-color: #9ae06f;
+  max-width: 700px;
+  width: 100%;
+  margin: 16px auto;
+  padding: 8px;
+  min-height: 400px; /*ajustei aqui pq o form ficou pequeno e os conteudos para fora dele*/
+
+  border-radius: 1vh;
+}
+
+.entrada {
+  width: 100%;
+  border: none;
+  border-bottom: solid 1px;
+  border-color: #9ae06f;
+}
+
+.data {
+  border: solid 2px;
+  border-color: #9ae06f;
+}
+
+#botao {
+  width: 156px;
+  height: 36px;
+  text-align: center;
+  border: none;
+  border-radius: 1vh;
+  background-color: #40b63e;
+  color: #fff;
+  font-weight: bolder;
+  margin: 16px auto;
+  display: block;
+}
+
+.texto {
+  color: #7159c1;
+}
+
+#titulo {
+  text-align: center;
+  color: #979797;
+}

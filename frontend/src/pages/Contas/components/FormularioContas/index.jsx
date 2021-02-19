@@ -1,4 +1,4 @@
-import {FaRegWindowClose} from 'react-icons/fa'; 
+import { FaRegWindowClose } from 'react-icons/fa';
 import { Form } from 'react-bootstrap';
 import {useDispatch} from 'react-redux';
 
