@@ -3,11 +3,19 @@ import { Link } from 'react-router-dom';
 import {Formik, Field, Form} from 'formik';
 import schema from './schema';
 
-function Login(){
-    function onSubmit(values, actions){
-        console.log('SUBMIT', values);
+import api from '../../../../../services/api';
 
+function Login() {
+  async function onSubmit(values, actions) {
+    try {
+      console.log('SUBMIT', values);
+      const response = await api.post('/login', values);
+
+      console.log(response.data.token);
+    } catch (error) {
+      console.log(error.response.data.error);
     }
+  }
 
     return(
         <div>

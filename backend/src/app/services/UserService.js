@@ -6,7 +6,7 @@ const { date } = require('../../utils/date');
 
 module.exports = {
   async createNewUser(data) {
-    let { name, email, password, repeatPassword } = data;
+    let { nome, email, senha, confirmarSenha } = data;
 
     const findEmail = await User.findByEmail(email);
 
@@ -16,15 +16,15 @@ module.exports = {
       throw new Error('Email já existe.');
     }
 
-    if (password !== repeatPassword) {
+    if (senha !== confirmarSenha) {
       throw new Error('Senhas não conferem.');
     }
 
     const created_at = date(Date.now()).iso;
 
-    const hashPassword = await hash(password, 8);
+    const hashPassword = await hash(senha, 8);
 
-    const datas = [name, email, hashPassword, created_at];
+    const datas = [nome, email, hashPassword, created_at];
 
     const userCreated = await User.userCreate(datas);
 

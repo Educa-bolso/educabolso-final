@@ -1,13 +1,19 @@
 import React from 'react';
-import {Formik, Field, Form} from 'formik';
+import { Formik, Field, Form } from 'formik';
 import schemaCadastro from './schemaCadastro';
 
+import api from '../../../../../services/api';
 
 function Cadastro() {
-    function onSubmit(values, actions){
-        console.log('SUBMIT', values);
+  async function onSubmit(values, actions) {
+    try {
+      await api.post('/cadastro', values);
 
+      values.nome = '';
+    } catch (error) {
+      console.log(error.response.data.error);
     }
+  }
 
     return(
         <div>
