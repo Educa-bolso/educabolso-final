@@ -1,7 +1,4 @@
 
-.formulario p{
-    text-align: right;
-  }
   
   .formulario {
     width: 100%;
@@ -10,7 +7,16 @@
     border: 2px solid #9ae06f;
     padding: 20px;
     border-radius: 8px;
+    position: relative;
   }
+
+  .formulario .fechar{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+  }
+
 
   .form-descricao{
     font-size: 16px;
@@ -38,4 +44,5 @@
     border-bottom: 1px solid black !important;
     border-radius: 0 !important;
   }
+  
   

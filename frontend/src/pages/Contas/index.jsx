@@ -1,3 +1,5 @@
+import {FaPlusCircle} from 'react-icons/fa'; 
+
 import Header from '../../components/Header';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
@@ -12,7 +14,7 @@ const Contas = () => {
       <Header />
       <Navigation />
 
-      <section>
+      <section className="conteudo-contas">
         <div className='contas'>
           <h3 className='contas1'>Contas registradas: 11</h3>
           <h3 className='contas2'>Gasto mensal: R$ 200,00</h3>
@@ -34,6 +36,7 @@ const Contas = () => {
           </span>
 
            <FormularioContas/>
+           <button className="incluir"><FaPlusCircle size={25} color="#7159c1"/></button>
          </section>
       <Footer />
     </>

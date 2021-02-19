@@ -1,3 +1,8 @@
+.conteudo-contas{
+  width: 100%;
+  position: relative;
+}
+
 .contas {
   width: 100%;
   display: flex;
@@ -6,7 +11,6 @@
 
 .contas1 {
   margin-right: 4px; 
-  /* position: relative;  */
   border: 1px solid  #40b63e;
   background:  #40b63e;
   padding: 2px;
@@ -24,16 +28,6 @@
   font-size: 16px;
   color: rgba(255, 255, 255, 0.842);
   border-radius: 4px;
-}
-
-.contas1::after {
-  content: '';
-  width: 2px;
-  height: 16px;
-  top: 0;
-  right: -5px;
-  position: absolute;
-  background: black;
 }
 
 .contas h3 {
@@ -56,6 +50,15 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
+
+.conteudo-contas .incluir{
+    position: absolute;
+    bottom: -100px;
+    right: 100px;
+    background-color: transparent;    
+    padding: 50px;
+}
+
 
 @media (max-width: 770px) {
   .registro-contas {
