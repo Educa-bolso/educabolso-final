@@ -1,13 +1,23 @@
 import Header from '../../components/Header';
 import Navigation from '../../components/Navigation';
-import Footer from '../../components/Footer';
 import { Formik, Field, Form } from 'formik';
 import schemaPerfil from './schemaPerfil';
 import './styles.css';
 
+import api from '../../services/api';
+
 const Perfil = () => {
-  function onSubmit(values, actions) {
-    console.log(values);
+  const userId = sessionStorage.getItem('@userId');
+
+  async function onSubmit(values, actions) {
+    try {
+      console.log(values);
+      const response = await api.put('/users', values);
+
+      console.log(response);
+    } catch (error) {
+      console.log(error.response.data.error);
+    }
   }
 
   return (
@@ -24,13 +34,13 @@ const Perfil = () => {
               nome: '',
               sobrenome: '',
               endereco: '',
-              dataNascimento: '',
-              autonomo: '',
-              clt: '',
+              data_nascimento: '',
+              tipo_trabalho: '',
+              userId: userId,
             }}
             render={({ values, errors }) => (
               <Form action='' method='POST'>
-                <label className='texto' for='nome'>
+                <label className='texto' htmlFor='nome'>
                   Nome:
                 </label>
                 <br />
@@ -39,7 +49,7 @@ const Perfil = () => {
                 {errors.nome && <span>{errors.nome}</span>}
                 <br />
 
-                <label className='texto' for='sobrenome'>
+                <label className='texto' htmlFor='sobrenome'>
                   Sobrenome:
                 </label>
                 <br />
@@ -53,7 +63,7 @@ const Perfil = () => {
                 {errors.sobrenome && <span>{errors.sobrenome}</span>}
                 <br />
 
-                <label className='texto' for='endereco'>
+                <label className='texto' htmlFor='endereco'>
                   Endereço:
                 </label>
                 <br />
@@ -67,7 +77,7 @@ const Perfil = () => {
                 <br />
                 {errors.endereco && <span>{errors.endereco}</span>}
                 <br />
-                <label className='texto' for='data_nascimento'>
+                <label className='texto' htmlFor='data_nascimento'>
                   Data de Nascimento:
                 </label>
                 <br />
@@ -86,22 +96,30 @@ const Perfil = () => {
                 <Field
                   type='radio'
                   id='opc1'
-                  name='tipo_servico'
+                  name='tipo_trabalho'
                   value='autonomo'
                 />
-                <label className='texto' for='opc1'>
+                <label className='texto' htmlFor='opc1'>
                   Autônomo
                 </label>
                 <br />
                 {errors.autonomo && <span>{errors.autonomo}</span>}
                 <br />
-                <Field type='radio' id='opc2' name='tipo_servico' value='clt' />
-                <label className='texto' for='opc2'>
+                <Field
+                  type='radio'
+                  id='opc2'
+                  name='tipo_trabalho'
+                  value='clt'
+                />
+                <label className='texto' htmlFor='opc2'>
                   Regime CLT
                 </label>
                 <br />
                 {errors.clt && <span>{errors.clt}</span>}
                 <br />
+
+                <Field name='userId' type='hidden' value={userId} />
+
                 <button type='submit' id='botao'>
                   Salvar
                 </button>
@@ -110,8 +128,6 @@ const Perfil = () => {
           />
         </div>
       </div>
-
-      <Footer />
     </>
   );
 };

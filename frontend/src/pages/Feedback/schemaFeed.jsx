@@ -1,5 +1,7 @@
-import *as Yup from 'yup';
+import * as Yup from 'yup';
 
 export default Yup.object().shape({
-    msg: Yup.string().required("Por favor, deixa sua opinião"),
+  mensagem: Yup.string()
+    .min(5, 'No mínimo 5 caracters.')
+    .required('A sua opinião é importante!!'),
 });

@@ -3,8 +3,6 @@ import { useSelector } from 'react-redux';
 import Header from '../../components/Header';
 import Card from '../../components/Card';
 import Navigation from '../../components/Navigation';
-import Footer from '../../components/Footer';
-
 import Feedback from './components/Feedback';
 import CardMain from './components/CardMain';
 import SaibaMais from './components/SaibaMais';
@@ -40,8 +38,6 @@ const Home = () => {
       <Feedback />
 
       {saibaMais && <SaibaMais />}
-
-      <Footer />
     </>
   );
 };

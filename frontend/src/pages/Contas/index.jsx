@@ -2,7 +2,6 @@ import { FaPlusCircle } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../../components/Header';
 import Navigation from '../../components/Navigation';
-import Footer from '../../components/Footer';
 import RegistroContas from './components/RegistroContas';
 import FormularioContas from './components/FormularioContas';
 
@@ -66,7 +65,6 @@ const Contas = () => {
           <FaPlusCircle size={35} color='#7159c1' />
         </button>
       </section>
-      <Footer />
     </>
   );
 };

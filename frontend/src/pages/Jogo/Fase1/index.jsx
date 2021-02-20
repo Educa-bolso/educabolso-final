@@ -6,11 +6,11 @@ import { GoRuby } from 'react-icons/go';
 
 import Header from '../../../components/Header';
 import Navigation from '../../../components/Navigation';
-import Footer from '../../../components/Footer';
 
 import dadosQuestoes from '../../../questions';
 
 import './styles.css';
+import questions from '../../../questions';
 
 const Fase1 = () => {
   const calculoPorcentagem = 100 / dadosQuestoes.length;
@@ -23,41 +23,32 @@ const Fase1 = () => {
 
   function fecharFeedbackQuestao() {
     setRespostaIncorreta(false);
-    setQuestaoAtual(questaoAtual + 1);
+
+    if (questaoAtual < dadosQuestoes.length) {
+      setQuestaoAtual(questaoAtual + 1);
+    }
   }
 
-  function manipulandoResposta(resposta, e) {
+  function manipulandoResposta(resposta) {
     setBarraProgresso(barraProgresso + calculoPorcentagem);
 
-    if (resposta) {
-      e.target.classList.add('correta');
-      setPontos(pontos + 1);
-      setRespostaCorreta(true);
-    } else {
-      e.target.classList.add('incorreta');
-      setRespostaIncorreta(true);
-
-      setTimeout(() => {}, 3000);
-    }
-
-    let proximaQuestao = questaoAtual + 1;
-
-    if (proximaQuestao < dadosQuestoes.length) {
+    if (questaoAtual < dadosQuestoes.length) {
       if (resposta) {
-        setTimeout(() => {
-          setRespostaCorreta(false);
-          setQuestaoAtual(proximaQuestao);
-        }, 1000);
-      }
+        setPontos(pontos + 1);
+        setRespostaCorreta(true);
 
-      if (!resposta) {
         setTimeout(() => {
+          setQuestaoAtual(questaoAtual + 1);
+          setRespostaCorreta(false);
+        }, 1000);
+      } else {
+        setRespostaIncorreta(true);
+
+        setTimeout(() => {
+          setQuestaoAtual(questaoAtual + 1);
           setRespostaIncorreta(false);
-          setQuestaoAtual(proximaQuestao);
-        }, 5000);
+        }, 3000);
       }
-    } else {
-      alert('Questões finalizadas');
     }
   }
 
@@ -86,22 +77,38 @@ const Fase1 = () => {
             ></div>
           </div>
           <div className='numero-questoes'>
-            {questaoAtual + 1}/{dadosQuestoes.length}
+            {questaoAtual}/{dadosQuestoes.length}
           </div>
         </span>
       </div>
 
       <div className='section-respostas'>
-        <p>{dadosQuestoes[questaoAtual].questionTitle}</p>
+        {questaoAtual < dadosQuestoes.length ? (
+          <>
+            <p>{dadosQuestoes[questaoAtual].questionTitle}</p>
 
-        {dadosQuestoes[questaoAtual].answerOptions.map((answerData) => (
-          <button
-            key={answerData.answer}
-            onClick={(e) => manipulandoResposta(answerData.isCorrect, e)}
-          >
-            {answerData.answer}
-          </button>
-        ))}
+            {dadosQuestoes[questaoAtual].answerOptions.map((answerData) => (
+              <button
+                className='resposta-button'
+                key={answerData.answer}
+                onClick={(e) => manipulandoResposta(answerData.isCorrect, e)}
+              >
+                {answerData.answer}
+              </button>
+            ))}
+          </>
+        ) : (
+          <div className='final-fase-container'>
+            <div className='final-fase-conteudo'>
+              <h3>Parabéns por ter chegado até aqui!!</h3>
+              <h4>
+                Você acertou {pontos > 1 ? `${pontos} questões!` : '1 questão!'}
+              </h4>
+
+              <button className='final-fase-button'>voltar</button>
+            </div>
+          </div>
+        )}
       </div>
 
       {respostaCorreta && (
@@ -113,8 +120,8 @@ const Fase1 = () => {
       )}
 
       {respostaIncorreta && (
-        <div className='resposta-correta-container'>
-          <div className='resposta-correta incorreta'>
+        <div className='resposta-incorreta-container'>
+          <div className='resposta-incorreta'>
             <h4>Poxa, você não acertou :(</h4>
 
             <p>
@@ -133,8 +140,6 @@ const Fase1 = () => {
           </div>
         </div>
       )}
-
-      <Footer />
     </>
   );
 };

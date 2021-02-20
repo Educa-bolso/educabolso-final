@@ -89,7 +89,7 @@
 
 /* === ESTILIZAÇÃO DAS RESPOSTAS === */
 
-.section-respostas button {
+.section-respostas .resposta-button {
   width: 80%;
   margin: 10px 0;
   padding: 8px 16px;
@@ -111,7 +111,7 @@
   border-radius: 16px;
 }
 
-.section-respostas button:hover {
+.section-respostas .resposta-button:hover {
   opacity: 0.85;
 }
 
@@ -126,7 +126,8 @@ button.incorreta {
 }
 
 /* FEEDBACK DAS QUESTÕES === */
-.resposta-correta-container {
+.resposta-correta-container,
+.resposta-incorreta-container {
   position: absolute;
   top: 0;
   right: 0;
@@ -138,11 +139,12 @@ button.incorreta {
   align-items: center;
 }
 
-.resposta-correta {
+.resposta-correta,
+.resposta-incorreta {
   width: 90%;
   max-width: 580px;
   min-height: 200px;
-  background-color: #f5f5f5;
+  background-color: var(--cor-primaria);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -150,11 +152,18 @@ button.incorreta {
   align-items: center;
 }
 
-.resposta-correta.incorreta {
-  padding: 8px;
+.resposta-correta h1 {
+  font-size: 22px;
+  text-align: center;
+  color: #f5f5f5;
 }
 
-.resposta-correta.incorreta h4 {
+.resposta-incorreta {
+  padding: 8px;
+  background-color: #f5f5f5;
+}
+
+.resposta-incorreta h4 {
   background-color: rgb(200, 89, 89);
   color: #fff;
   width: 100%;
@@ -163,14 +172,58 @@ button.incorreta {
   border-radius: 8px;
 }
 
-.resposta-correta.incorreta p {
+.resposta-incorreta p {
   color: #686565;
   text-align: center;
 }
 
-.resposta-correta.incorreta p span {
+.resposta-incorreta p span {
   background-color: var(--cor-primaria);
   color: #fff;
   padding: 4px 8px;
   border-radius: 8px;
+}
+
+/* === FINAL DA FASE === */
+.final-fase-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 16px;
+}
+
+.final-fase-conteudo {
+  text-align: center;
+}
+
+.final-fase-conteudo h3 {
+  font-size: 32px;
+  line-height: 42px;
+  color: rgb(146, 145, 145);
+}
+
+.final-fase-conteudo h4 {
+  margin-top: 16px;
+}
+
+.final-fase-conteudo > .final-fase-button {
+  margin-right: 8px;
+}
+
+.final-fase-button {
+  max-width: 240px;
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 20px auto;
+  color: #fff;
+  background-color: var(--cor-primaria);
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 2px 3px 4px 1px rgba(0, 0, 0, 0.2);
 }
