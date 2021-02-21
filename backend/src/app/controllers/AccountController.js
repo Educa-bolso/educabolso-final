@@ -21,7 +21,7 @@ module.exports = {
       const { id } = request.user;
       const { user_id } = request.body;
 
-      if (id !== user_id) {
+      if (id != user_id) {
         return response.status(404).json({ error: 'Usuário não confere.' });
       }
 
@@ -54,7 +54,7 @@ module.exports = {
 
   async delete(request, response) {
     const userId = request.user.id;
-    const accountId = request.body.id;
+    const accountId = request.params.accountId;
 
     if (!userId) {
       return response.status(404).json({ error: 'Usuário não está logado.' });

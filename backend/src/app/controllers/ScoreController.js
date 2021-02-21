@@ -22,7 +22,7 @@ module.exports = {
     console.log(user);
 
     try {
-      if (user.id !== user_id) {
+      if (user.id !== Number(user_id)) {
         return response.status(401).json({
           error: 'Você não pode incluir pontuação para outro usuário.',
         });

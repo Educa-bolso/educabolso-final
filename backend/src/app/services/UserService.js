@@ -30,7 +30,7 @@ module.exports = {
 
     const user = userCreated.rows[0];
 
-    delete user.password;
+    delete user.senha;
 
     return user;
   },

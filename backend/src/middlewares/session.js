@@ -2,7 +2,7 @@ const { compare } = require('bcryptjs');
 const UserService = require('../app/services/UserService');
 
 async function login(request, response, next) {
-  const { email, password } = request.body;
+  const { email, senha } = request.body;
 
   const user = await UserService.findUserByEmail(email);
 
@@ -10,7 +10,7 @@ async function login(request, response, next) {
     return response.status(401).json({ error: 'Email ou senha incorretos.' });
   }
 
-  const comparePassword = await compare(password, user.senha);
+  const comparePassword = await compare(senha, user.senha);
 
   if (user.email !== email || !comparePassword) {
     return response.status(401).json({ error: 'Email ou senha incorretos.' });

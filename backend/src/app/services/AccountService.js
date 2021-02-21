@@ -72,8 +72,9 @@ module.exports = {
     const account = accountFounded.rows[0];
 
     console.log(userId);
+    console.log(account);
 
-    if (userId !== account.user_id) {
+    if (userId != account.user_id) {
       throw new Error('Usuário não pertence a esta conta.');
     }
     if (!account) {
