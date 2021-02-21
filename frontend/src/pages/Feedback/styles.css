@@ -1,0 +1,53 @@
+#formu {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario-feedback {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-feedback {
+  max-width: 550px;
+  width: 100%;
+  min-height: 250px;
+  height: 100%;
+  border: solid 2px;
+  border-color: #9ae06f;
+  border-radius: 5%;
+  outline: none;
+}
+#texto {
+  color: rgb(116, 113, 113);
+  font-size: 18px;
+  text-align: center;
+  line-height: 28px;
+}
+
+#botao {
+  width: 156px;
+  height: 36px;
+  border: none;
+  border-radius: 1vh;
+  background-color: #40b63e;
+  color: #fff;
+  font-weight: bolder;
+}
+
+@media (max-width: 450px) {
+  .input-feedback {
+    min-height: 150px;
+  }
+
+  #texto {
+    font-size: 16px;
+  }
+}

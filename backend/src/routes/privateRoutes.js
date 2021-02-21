@@ -1,11 +1,11 @@
 const { Router } = require('express');
 
-const authentication = require('../middlewares/ensureAuthentication');
 const { ensureAuthenticated } = require('../middlewares/ensureAuthentication');
 
 const UserController = require('../app/controllers/UserController');
 const AccountController = require('../app/controllers/AccountController');
 const ScoreController = require('../app/controllers/ScoreController');
+const FeedbackController = require('../app/controllers/FeedbackController');
 
 const privateRoutes = Router();
 
@@ -19,17 +19,20 @@ privateRoutes.put('/users', ensureAuthenticated, UserController.update);
 // delete user
 privateRoutes.delete('/users', ensureAuthenticated, UserController.delete);
 
-/* === ROUTES ACCOUNTS === */
+/* === ROUTES PRIVATE ACCOUNTS === */
 privateRoutes.get('/accounts', ensureAuthenticated, AccountController.index);
 privateRoutes.post('/accounts', ensureAuthenticated, AccountController.create);
 privateRoutes.put('/accounts', ensureAuthenticated, AccountController.update);
 privateRoutes.delete(
-  '/accounts',
+  '/accounts/:accountId',
   ensureAuthenticated,
   AccountController.delete
 );
 
-/* === ROUTES SCORE === */
+/* === FEEDBACK === */
+privateRoutes.post('/feedback', ensureAuthenticated, FeedbackController.create);
+
+/* === ROUTES PRIVATE SCORE === */
 privateRoutes.get('/score', ensureAuthenticated, ScoreController.index);
 privateRoutes.post('/score', ensureAuthenticated, ScoreController.create);
 

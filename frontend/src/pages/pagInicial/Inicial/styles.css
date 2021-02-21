@@ -1,25 +1,121 @@
 
-body{
-    /*background-color: #9ae06f3d;*/
+/*body{
+    /*background-color: #9ae06f3d;
     background-image: linear-gradient(to bottom, #fff,#fff, #9ae06f7a, #40b63e6c);
     
+}*/
+#bloco{
+    display: flex;
+    justify-content: space-between;
 }
 
-#card{
+#cartao{
     border: solid 1px;
     border-color: #9AE06F;
     border-radius: 5%;
     margin-top: 30vh;
+    width: 25vw;
+    height: 35vh;
     color: #7159c1;
     font-weight: bolder;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
     align-items: center;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #fff,#fff, #9ae06f7a, #40b63e6c);
+
 }
 
-#img{
+#imgInicial{
     width: 150px;
 }
 
-#img1{
+#calcu{
     width: 200px;
 }
+@media (max-width: 800px) {
+    #bloco{
+        display: flex;
+        justify-content: space-between;
+    }
+    #cartao{
+        border: solid 1px;
+        border-color: #9AE06F;
+        border-radius: 5%;
+        margin-top: 30vh;
+        width: 25vw;
+        height: 25vh;
+        color: #7159c1;
+        font-weight: bolder;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+        align-items: center;
+        text-align: center;
+        background-image: linear-gradient(to bottom, #fff,#fff, #9ae06f7a, #40b63e6c);
+    
+    }
+    #imgInicial{
+        width: 100px;
+    }
+    #calcu{
+        width: 150px;
+    }
+    
+  }
+  
+  
+  @media (max-width: 934px) {
+    #bloco{
+        display: flex;
+        justify-content: space-between;
+    }
+    #cartao{
+        border: solid 1px;
+        border-color: #9AE06F;
+        border-radius: 5%;
+        margin-top: 30vh;
+        width: 25vw;
+        height: 25vh;
+        color: #7159c1;
+        font-weight: bolder;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+        align-items: center;
+        text-align: center;
+        background-image: linear-gradient(to bottom, #fff,#fff, #9ae06f7a, #40b63e6c);
+    
+    }
+    #imgInicial{
+        width: 100px;
+    }
+    #calcu{
+        width: 150px;
+    }
+  }
+  
+  @media (max-width: 490px) {
+    #bloco{
+        display: flex;
+        justify-content: space-between;
+    }
+    #cartao{
+        border: solid 1px;
+        border-color: #9AE06F;
+        border-radius: 5%;
+        margin-top: 30vh;
+        width: 25vw;
+        height: 30vh;
+        color: #7159c1;
+        font-weight: bolder;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+        align-items: center;
+        text-align: center;
+        background-image: linear-gradient(to bottom, #fff,#fff, #9ae06f7a, #40b63e6c);
+    
+    }
+    #imgInicial{
+        width: 90px;
+    }
+    #calcu{
+        width: 100px;
+    }
+    
+  }
+  

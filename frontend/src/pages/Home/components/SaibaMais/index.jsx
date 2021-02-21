@@ -22,17 +22,18 @@ const SaibaMais = () => {
         </div>
 
         <p>
-          Nos faz entender a forma como lidamos com o nosso dinheiro, não basta
-          apenas controlar a entrada e saída de dinheiro, ela trabalha o lado
-          emocional e impulsivo de obter um determinado produto.
+          Nos faz entender a forma como lidamos com o nosso dinheiro, mostrando
+          que não basta apenas controlar a entrada e saída dele, mas que se deve
+          controlar o lado emocional e impulsivo de consumir alguns produtos.
         </p>
         <p>
-          Foca totalmente em nossa capacidade de criar metas, traçar sonhos e
-          objetivos com o intuito de alcança-los, mas para isso, é preciso
-          resiliência na hora de gastar, as vezes o impulso de trocar de celular
-          sem necessidade, é um dos casos que a educação financeira entra em
-          ação, priorizando sempre o lado racional e o quão essa atitude irá
-          impactar a longo prazo.
+          Foca na nossa capacidade de criar metas, traçar sonhos e objetivos com
+          o intuito de alcançá-los, mostrando que para isso, é preciso
+          resiliência na hora de gastar. Por exemplo, quando queremos trocar de
+          celular sem necessidade, este é um dos casos em que a mudança de
+          hábitos adquirido pelo acesso a uma educação financeira, entra em
+          ação, mostrando o quanto essa atitude irá impactar seu orçamento a
+          longo prazo.
         </p>
 
         <span>

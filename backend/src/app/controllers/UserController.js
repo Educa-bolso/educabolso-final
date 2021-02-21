@@ -53,7 +53,7 @@ module.exports = {
     try {
       const user = request.user;
 
-      if (user.id !== request.body.userId) {
+      if (user.id !== Number(request.body.userId)) {
         return response.status(401).json({
           error: 'Você não tem permissão de alterar dados de outro usuário.',
         });

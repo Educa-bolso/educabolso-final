@@ -2,7 +2,7 @@ import './styles.css';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className='footer-all-pages'>
       <p>© Copyright Educabolso</p>
     </footer>
   );
