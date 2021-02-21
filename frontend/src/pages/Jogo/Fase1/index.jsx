@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FaChevronLeft, FaWindowClose } from 'react-icons/fa';
 import { GoRuby } from 'react-icons/go';
+
+import notification from '../../../utils/notification';
 
 import Header from '../../../components/Header';
 import Navigation from '../../../components/Navigation';
@@ -10,16 +12,34 @@ import Navigation from '../../../components/Navigation';
 import dadosQuestoes from '../../../questions';
 
 import './styles.css';
-import questions from '../../../questions';
+
+import api from '../../../services/api';
 
 const Fase1 = () => {
-  const calculoPorcentagem = 100 / dadosQuestoes.length;
-
+  const [questoes, setQuestoes] = useState([]);
   const [questaoAtual, setQuestaoAtual] = useState(0);
   const [barraProgresso, setBarraProgresso] = useState(0);
   const [pontos, setPontos] = useState(0);
   const [respostaCorreta, setRespostaCorreta] = useState(false);
   const [respostaIncorreta, setRespostaIncorreta] = useState(false);
+
+  const [feedback, setFeedback] = useState('');
+  const [textoRespostaCorreta, setTextoRespostaCorreta] = useState('');
+
+  const user_id = sessionStorage.getItem('@userId');
+  const calculoPorcentagem = 100 / questoes.length;
+
+  const history = useHistory();
+
+  useEffect(() => {
+    async function pegarQuestoes() {
+      const response = await api.get('/questions/1');
+
+      setQuestoes(response.data);
+    }
+
+    pegarQuestoes();
+  }, []);
 
   function fecharFeedbackQuestao() {
     setRespostaIncorreta(false);
@@ -29,7 +49,7 @@ const Fase1 = () => {
     }
   }
 
-  function manipulandoResposta(resposta) {
+  function manipulandoResposta(resposta, textoFeedback, textoResposta) {
     setBarraProgresso(barraProgresso + calculoPorcentagem);
 
     if (questaoAtual < dadosQuestoes.length) {
@@ -43,12 +63,35 @@ const Fase1 = () => {
         }, 1000);
       } else {
         setRespostaIncorreta(true);
+        setFeedback(textoFeedback);
+        setTextoRespostaCorreta(textoResposta);
 
         setTimeout(() => {
           setQuestaoAtual(questaoAtual + 1);
           setRespostaIncorreta(false);
         }, 3000);
       }
+    }
+  }
+
+  async function voltarParaHome() {
+    try {
+      await api.post('/score', {
+        user_id,
+        score: pontos,
+      });
+
+      notification({
+        titulo: 'Pontos cadastrados!',
+        tempo: 2000,
+      });
+
+      history.push('/jogo');
+    } catch (error) {
+      notification({
+        titulo: error.response.data.error,
+        tempo: 2000,
+      });
     }
   }
 
@@ -77,23 +120,29 @@ const Fase1 = () => {
             ></div>
           </div>
           <div className='numero-questoes'>
-            {questaoAtual}/{dadosQuestoes.length}
+            {questaoAtual}/{questoes.length}
           </div>
         </span>
       </div>
 
       <div className='section-respostas'>
-        {questaoAtual < dadosQuestoes.length ? (
+        {questaoAtual < questoes.length ? (
           <>
-            <p>{dadosQuestoes[questaoAtual].questionTitle}</p>
+            <p>{questoes[questaoAtual].pergunta}</p>
 
-            {dadosQuestoes[questaoAtual].answerOptions.map((answerData) => (
+            {questoes[questaoAtual].respostas.map((resposta) => (
               <button
                 className='resposta-button'
-                key={answerData.answer}
-                onClick={(e) => manipulandoResposta(answerData.isCorrect, e)}
+                key={resposta.id}
+                onClick={(e) =>
+                  manipulandoResposta(
+                    resposta.correta,
+                    resposta.feedback,
+                    resposta.resposta_correta
+                  )
+                }
               >
-                {answerData.answer}
+                {resposta.resposta}
               </button>
             ))}
           </>
@@ -105,7 +154,12 @@ const Fase1 = () => {
                 Você acertou {pontos > 1 ? `${pontos} questões!` : '1 questão!'}
               </h4>
 
-              <button className='final-fase-button'>voltar</button>
+              <button
+                onClick={() => voltarParaHome()}
+                className='final-fase-button'
+              >
+                voltar
+              </button>
             </div>
           </div>
         )}
@@ -124,14 +178,10 @@ const Fase1 = () => {
           <div className='resposta-incorreta'>
             <h4>Poxa, você não acertou :(</h4>
 
-            <p>
-              A questão fala sobre a importância de ter uma reserva financeira,
-              e a reserva está relacionada a quantidade de dinheiro que
-              acumulamos durante um período de 12 meses.
-            </p>
+            <p>{feedback}</p>
 
             <p>
-              <span>A resposta correta é:</span> Acúmulo de receita por um ano.
+              <span>A resposta correta é:</span> {textoRespostaCorreta}
             </p>
 
             <button onClick={() => fecharFeedbackQuestao()}>

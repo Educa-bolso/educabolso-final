@@ -6,12 +6,17 @@
   margin: 0 auto;
 }
 
+.card .lixeira-button {
+  background-color: transparent;
+  margin-left: auto;
+}
+
 .card img {
   width: 15px;
   height: 15px;
   margin-left: auto;
   display: block;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .card h2 {
@@ -27,7 +32,7 @@
   margin: 2px 0px;
 }
 
-.card button {
+.card .button-editar {
   background: #50bc22;
   border-radius: 8px;
   border: none;

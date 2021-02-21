@@ -1,5 +1,8 @@
+import { useState, useEffect } from 'react';
+
 import { FaPlusCircle } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
+
 import Header from '../../components/Header';
 import Navigation from '../../components/Navigation';
 import RegistroContas from './components/RegistroContas';
@@ -7,27 +10,23 @@ import FormularioContas from './components/FormularioContas';
 
 import './styles.css';
 
-const contas = [
-  {
-    id: 1,
-    nome: 'Luz',
-    valor: '50,00',
-  },
-  {
-    id: 2,
-    nome: 'Água',
-    valor: '60,00',
-  },
-  {
-    id: 3,
-    nome: 'Internet',
-    valor: '100,00',
-  },
-];
+import api from '../../services/api';
 
 const Contas = () => {
+  const [contas, setContas] = useState([]);
+
   const formulario = useSelector((state) => state.abrirFormulario);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    async function pegarContas() {
+      const response = await api.get('/accounts');
+
+      setContas(response.data);
+    }
+
+    pegarContas();
+  }, [contas]);
 
   function abrirFormulario() {
     dispatch({ type: 'ABRIRFORMULARIO' });
@@ -40,8 +39,9 @@ const Contas = () => {
 
       <section className='conteudo-contas'>
         <div className='contas'>
-          <h3 className='contas1'>Contas registradas: 0</h3>
-          <h3 className='contas2'>Gasto mensal: R$ 0,00</h3>
+          <h3 className='contas1'>
+            Contas registradas: {contas ? contas.length : '0'}
+          </h3>
         </div>
 
         {contas ? (
@@ -51,6 +51,7 @@ const Contas = () => {
                 nome={item.nome}
                 valor={item.valor}
                 key={item.id}
+                id={item.id}
               />
             ))}
           </div>
