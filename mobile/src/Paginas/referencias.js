@@ -11,7 +11,7 @@ import {
   ScrollView,
 } from "react-native";
 
-export default function App() {
+export default function referencias() {
   return (
     <ScrollView>
       <SafeAreaView>
@@ -31,7 +31,7 @@ export default function App() {
             Beatriz Japa
           </Text>
           <Image
-            source={require("./assets/avatar1.png")}
+            source={require('../../assets/avatar1.png')}
             style={{ width: 50, height: 50, marginRight: 15 }}
             resizeMode="contain"
           />
@@ -62,7 +62,7 @@ export default function App() {
               Viver bem com o dinheiro que você tem
             </Text>
             <Image
-              source={require("./assets/caderno.png")}
+              source={require('../../assets/caderno.png')}
               style={{ width: 60, height: 60, marginRight: 15 }}
               resizeMode="contain"
             />
@@ -91,7 +91,7 @@ export default function App() {
               Gestão das finanças pessoais
             </Text>
             <Image
-              source={require("./assets/caderno.png")}
+              source={require("../../assets/caderno.png")}
               style={{ width: 60, height: 60, marginRight: 15 }}
               resizeMode="contain"
             />
@@ -127,7 +127,7 @@ export default function App() {
               Serasa Educação Financeira
             </Text>
             <Image
-              source={require("./assets/sites.png")}
+              source={require("../../assets/sites.png")}
               style={{ width: 60, height: 60, marginRight: 15 }}
               resizeMode="contain"
             />
@@ -156,7 +156,7 @@ export default function App() {
               Como organizar o orçamento familiar - FGV
             </Text>
             <Image
-              source={require("./assets/sites.png")}
+              source={require("../../assets/sites.png")}
               style={{ width: 60, height: 60, marginRight: 15 }}
               resizeMode="contain"
             />
@@ -191,7 +191,7 @@ export default function App() {
               NoFront - Empoderamento Financeiro
             </Text>
             <Image
-              source={require("./assets/youtube.png")}
+              source={require("../../assets/youtube.png")}
               style={{ width: 60, height: 60, marginRight: 15 }}
               resizeMode="contain"
             />
@@ -220,7 +220,7 @@ export default function App() {
               GUETONOMIA
             </Text>
             <Image
-              source={require("./assets/youtube.png")}
+              source={require("../../assets/youtube.png")}
               style={{ width: 60, height: 60, marginRight: 15 }}
               resizeMode="contain"
             />
@@ -244,19 +244,19 @@ export default function App() {
         <SafeAreaView>
           <View style={styles.footer}>
             <Image
-              source={require("./assets/Home.png")}
+              source={require("../../assets/Home.png")}
               style={{ width: 30, height: 30, marginRight: 15 }}
               resizeMode="contain"
             />
 
             <Image
-              source={require("./assets/game.png")}
+              source={require("../../assets/game.png")}
               style={{ width: 30, height: 30, marginRight: 15 }}
               resizeMode="contain"
             />
 
             <Image
-              source={require("./assets/Vector.png")}
+              source={require("../../assets/Vector.png")}
               style={{ width: 30, height: 30, marginRight: 15 }}
               resizeMode="contain"
             />
@@ -301,7 +301,7 @@ const styles = StyleSheet.create({
   },
 
   btnMenu: {
-    backgroundColor: "#FFF",
+    
     marginTop: 40,
     flexDirection: "row",
     alignItems: "center",
@@ -327,7 +327,7 @@ const styles = StyleSheet.create({
   },
 
   footer: {
-    backgroundColor: "#FFF",
+    
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",

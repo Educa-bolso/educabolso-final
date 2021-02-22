@@ -6,7 +6,7 @@ export default function login(){
     <KeyboardAvoidingView style={styles.background}>
       <View style={styles.containerLogo}>
         <Image
-        source={require('../../assets/logo.png')}
+        source={require('../../assets/avatar1.png')}
         />
       </View>
 

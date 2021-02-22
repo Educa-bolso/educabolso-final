@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 
 
-export default function App(){
+export default function perfil(){
 
 
   const { register, handleSubmit } = useForm();
@@ -19,7 +19,7 @@ export default function App(){
       <Text style = {styles.saudacao1} Text style ={{color:'#AC8F8F', fontSize:15}}>Boa tarde</Text>
       <Text style = {styles.saudacao2} Text style ={{color:'#AC8F8F', fontSize:18, fontWeight:'bold'}}>Beatriz Japa</Text>
         <Image
-        source={require('./assets/avatar1.png')}
+        source={require('../../assets/avatar1.png')}
         style={{width: 50, height:50, marginRight:15}}
         resizeMode="contain"
         />
@@ -90,19 +90,19 @@ export default function App(){
     <View style = {styles.footer}>
 
     <Image
-        source={require('./assets/Home.png')}
+        source={require('../../assets/Home.png')}
         style={{width: 30, height:30, marginRight:15}}
         resizeMode="contain"
         />
 
     <Image
-        source={require('./assets/game.png')}
+        source={require('../../assets/game.png')}
         style={{width: 30, height:30, marginRight:15}}
         resizeMode="contain"
         />
 
     <Image
-        source={require('./assets/Vector.png')}
+        source={require('../../assets/Vector.png')}
         style={{width: 30, height:30, marginRight:15}}
         resizeMode="contain"
         />
@@ -150,13 +150,13 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     borderRadius:7,
     marginHorizontal:'32%',
-    marginTop:60,
+    marginTop:30,
    
 
   },
 
   btnMenu:{
-    backgroundColor:'#FFF',
+    
     marginTop:40,
     flexDirection:'row',
     alignItems:'center',
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
   },
 
   footer:{
-    backgroundColor:'#FFF',
+    
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'space-between',

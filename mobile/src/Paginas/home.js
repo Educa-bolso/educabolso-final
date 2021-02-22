@@ -3,14 +3,14 @@ import { View, Image, StyleSheet, SafeAreaView, Text, Button, TextInput, Animate
 
 
 
-export default function App(){
+export default function home(){
   return (
     <SafeAreaView>
       <View style = {styles.header}>
       <Text style = {styles.saudacao1} Text style ={{color:'#AC8F8F', fontSize:15}}>Ola!!!</Text>
       <Text style = {styles.saudacao2} Text style ={{color:'#AC8F8F', fontSize:18, fontWeight:'bold'}}>Bem vindo ao EducaBolso</Text>
         <Image
-        source={require('./assets/logo.png')}
+        source={require('../../assets/avatar1.png')}
         style={{width: 50, height:50, marginRight:15}}
         resizeMode="contain"
         />
@@ -18,7 +18,7 @@ export default function App(){
       
       <SafeAreaView style = {styles.EducaBolso}>
       <Image 
-        source={require('./assets/Gif_Menor.gif')}
+        source={require('../../assets/Gif_Menor.gif')}
         style={{width: 250, height:250, marginRight:15}}
         resizeMode="contain"
         />
@@ -33,19 +33,19 @@ export default function App(){
     <SafeAreaView>
     <View style = {styles.footer}>
     <Image
-        source={require('./assets/Home.png')}
+        source={require('../../assets/Home.png')}
         style={{width: 30, height:30, marginRight:15}}
         resizeMode="contain"
         />
 
     <Image
-        source={require('./assets/game.png')}
+        source={require('../../assets/game.png')}
         style={{width: 30, height:30, marginRight:15}}
         resizeMode="contain"
         />
 
     <Image
-        source={require('./assets/Vector.png')}
+        source={require('../../assets/Vector.png')}
         style={{width: 30, height:30, marginRight:15}}
         resizeMode="contain"
         />
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
 
   footer:{
-    backgroundColor:'#FFF',
+    
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'space-between',
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   EducaBolso:{
     marginLeft:80,
     marginTop:200,
-    marginBottom:150,
+    marginBottom:110,
   }
 });
           
