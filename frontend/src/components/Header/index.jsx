@@ -6,6 +6,8 @@ import './styles.css';
 
 import avatarImg from '../../assets/avatar.svg';
 
+import logoImg from '../../assets/logo-inicial.svg';
+
 const Header = () => {
   const dispatch = useDispatch();
 
@@ -32,7 +34,16 @@ const Header = () => {
   return (
     <>
       <header className='header-content'>
-        <span>Educabolso</span>
+        <img
+          src={logoImg}
+          alt='Logo Educabolso'
+          style={{
+            maxWidth: '50px',
+            width: '100%',
+            minHeight: '50px',
+            height: '100%',
+          }}
+        />
 
         <div className='nome-saudacao'>
           <span>{saudacao}</span>

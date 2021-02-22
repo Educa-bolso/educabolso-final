@@ -10,12 +10,16 @@ import SaibaMais from './components/SaibaMais';
 import conteudoCards from '../../conteudoCards';
 
 import './styles.css';
+import Footer from '../../components/Footer';
 
 const Home = () => {
   const saibaMais = useSelector((state) => state.saibaMaisReducer);
 
   return (
-    <>
+    <div
+      className='conteudo-pagina-home'
+      style={{ position: 'relative', minHeight: '92vh' }}
+    >
       <Header />
       <Navigation />
 
@@ -38,7 +42,7 @@ const Home = () => {
       <Feedback />
 
       {saibaMais && <SaibaMais />}
-    </>
+    </div>
   );
 };
 

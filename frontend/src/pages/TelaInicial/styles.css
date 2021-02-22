@@ -1,0 +1,134 @@
+.container-tela-inicial {
+  min-height: 95vh;
+}
+
+.tela-inicial-header {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 8px;
+}
+
+.logo-imagem-inicial {
+  max-width: 70px;
+  height: 70px;
+}
+
+.links-tela-inicial {
+  max-width: 100px;
+  width: 100%;
+  display: flex;
+}
+
+.links-tela-inicial .button-tela-inicial .primeiro {
+  position: relative;
+  background-color: red;
+}
+
+.links-tela-inicial .button-tela-inicial .primeiro {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  right: 0;
+  top: 0;
+  background-color: red;
+}
+
+.button-tela-inicial {
+  font-size: 18px;
+  margin-right: 16px;
+  background-color: transparent;
+  color: #605c5c;
+  font-weight: bold;
+}
+
+.button-tela-inicial:hover {
+  color: var(--cor-secundaria);
+}
+
+/* === main === */
+.conteudo-principal-tela-inicial {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.conteudo-principal-tela-inicial h1 {
+  font-size: 30px;
+  color: #4d4a4a;
+  line-height: 40px;
+}
+
+.conteudo-principal-tela-inicial p {
+  font-size: 18px;
+  color: #504e4e;
+}
+
+.imagem-tela-inicial {
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.cards-tela-inicial {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.card-tela-inicial {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  border: 2px solid var(--cor-primaria);
+  border-radius: 8px;
+}
+
+.card-tela-inicial h3 {
+  font-size: 22px;
+  margin: 10px auto;
+}
+
+.contato-tela-inicial {
+  background-color: var(--cor-primaria);
+  margin-top: 60px;
+  text-align: center;
+  color: #fff;
+}
+
+.container-tela-inicial p span {
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .conteudo-principal-tela-inicial {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-tela-inicial {
+    grid-template-columns: 1fr;
+  }
+
+  .conteudo-principal-tela-inicial h1 {
+    font-size: 28px;
+  }
+
+  .conteudo-principal-tela-inicial p {
+    font-size: 16px;
+  }
+}
