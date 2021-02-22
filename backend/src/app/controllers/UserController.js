@@ -86,15 +86,15 @@ module.exports = {
   async delete(request, response) {
     try {
       const { id } = request.user;
-      const { userId } = request.body;
+      const { user_id } = request.params;
 
-      if (id !== userId) {
+      if (id != user_id) {
         return response.status(401).json({
           error: 'Você não tem permissão para excluir outro usuário.',
         });
       }
 
-      await UserService.deleteUser(userId);
+      await UserService.deleteUser(user_id);
 
       return response.status(200).json({ message: 'Usuário deletado!' });
     } catch (e) {

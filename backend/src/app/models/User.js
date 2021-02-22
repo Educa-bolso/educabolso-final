@@ -1,7 +1,7 @@
 const db = require('../../config/database');
 
 module.exports = {
-  userCreate(datas) {
+  async userCreate(datas) {
     const query = `
       INSERT INTO users (nome, email, senha, criado_em)
       VALUES
@@ -9,7 +9,7 @@ module.exports = {
       RETURNING *
     `;
 
-    return db.query(query, datas);
+    return await db.query(query, datas);
   },
 
   update(datas) {
