@@ -1,6 +1,7 @@
-.conteudo-contas{
+.conteudo-contas {
   width: 100%;
   position: relative;
+  min-height: 75vh;
 }
 
 .contas {
@@ -10,19 +11,19 @@
 }
 
 .contas1 {
-  margin-right: 4px; 
-  border: 1px solid  #40b63e;
-  background:  #40b63e;
+  margin-right: 4px;
+  border: 1px solid #40b63e;
+  background: #40b63e;
   padding: 2px;
   font-weight: bold;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.842);
-  border-radius: 4px;  
+  border-radius: 4px;
 }
 
-.contas2{
-  border: 1px solid  #40b63e;
-  background:  #40b63e;
+.contas2 {
+  border: 1px solid #40b63e;
+  background: #40b63e;
   padding: 2px;
   font-weight: bold;
   font-size: 16px;
@@ -51,14 +52,17 @@
   gap: 12px;
 }
 
-.conteudo-contas .incluir{
-    position: absolute;
-    bottom: -100px;
-    right: 100px;
-    background-color: transparent;    
-    padding: 50px;
+.conteudo-contas .incluir {
+  background-color: rgb(32, 55, 158);
+  max-width: 200px;
+  width: 100%;
+  padding: 8px 16px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  margin: 10px auto;
+  display: block;
 }
-
 
 @media (max-width: 770px) {
   .registro-contas {

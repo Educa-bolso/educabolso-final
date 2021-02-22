@@ -15,7 +15,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
-      <Container fluid style={{ minHeight: '100vh' }}>
+      <Container fluid style={{ height: '100%' }}>
         <Container
           style={{
             maxWidth: '1240px',

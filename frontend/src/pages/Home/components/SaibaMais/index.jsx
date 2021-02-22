@@ -1,5 +1,6 @@
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -38,12 +39,7 @@ const SaibaMais = () => {
 
         <span>
           Quer ir além no assunto?{' '}
-          <a
-            target='_blank'
-            href='http://www.seer.unirio.br/index.php/raizeserumos/article/viewFile/3900/3508#:~:text=A%20educa%C3%A7%C3%A3o%20financeira%20visa%20a,forma%C3%A7%C3%A3o%20de%20consumidores%20mais%20conscientes.'
-          >
-            Clique na referência aqui!
-          </a>
+          <Link to='/saibamais'>Clique na referência aqui!</Link>
         </span>
       </div>
     </main>

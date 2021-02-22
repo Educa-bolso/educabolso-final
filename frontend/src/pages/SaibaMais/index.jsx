@@ -20,9 +20,14 @@ const SaibaMais = () => {
         <CardReferencia
           titulo='Viver bem com o dinheiro que se tem'
           imagem={book}
+          acesso='http://portal.mec.gov.br/index.php?option=com_docman&view=download&alias=6012-caderno3-educando-cidadania&Itemid=30192'
         />
 
-        <CardReferencia titulo='Gestão das Finanças pessoais' imagem={book} />
+        <CardReferencia
+          titulo='Gestão das Finanças pessoais'
+          imagem={book}
+          acesso='https://www.bcb.gov.br/content/cidadaniafinanceira/documentos_cidadania/Cuidando_do_seu_dinheiro_Gestao_de_Financas_Pessoais/caderno_cidadania_financeira.pdf'
+        />
       </div>
 
       <h4 className='titulo-referencia'>Sites</h4>

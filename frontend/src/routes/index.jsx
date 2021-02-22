@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import RoutesPrivate from './RoutesPrivate';
 
-import Inicial from '../pages/pagInicial/Inicial/';
+import Inicial from '../pages/TelaInicial';
 import Home from '../pages/Home';
 import Contas from '../pages/Contas';
 import SaibaMais from '../pages/SaibaMais';

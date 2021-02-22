@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { Link, useHistory } from 'react-router-dom';
-import { FaChevronLeft, FaWindowClose } from 'react-icons/fa';
+import { FaChevronLeft } from 'react-icons/fa';
 import { GoRuby } from 'react-icons/go';
 
 import notification from '../../../utils/notification';
@@ -41,13 +41,13 @@ const Fase1 = () => {
     pegarQuestoes();
   }, []);
 
-  function fecharFeedbackQuestao() {
+  /*function fecharFeedbackQuestao() {
     setRespostaIncorreta(false);
 
     if (questaoAtual < dadosQuestoes.length) {
       setQuestaoAtual(questaoAtual + 1);
     }
-  }
+  }*/
 
   function manipulandoResposta(resposta, textoFeedback, textoResposta) {
     setBarraProgresso(barraProgresso + calculoPorcentagem);
@@ -69,7 +69,7 @@ const Fase1 = () => {
         setTimeout(() => {
           setQuestaoAtual(questaoAtual + 1);
           setRespostaIncorreta(false);
-        }, 3000);
+        }, 10000);
       }
     }
   }
@@ -185,10 +185,6 @@ const Fase1 = () => {
             <p>
               <span>A resposta correta é:</span> {textoRespostaCorreta}
             </p>
-
-            <button onClick={() => fecharFeedbackQuestao()}>
-              <FaWindowClose size={30} color='#888' />
-            </button>
           </div>
         </div>
       )}

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import { FaPlusCircle } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Header from '../../components/Header';
@@ -61,10 +60,13 @@ const Contas = () => {
           </span>
         )}
 
-        {formulario && <FormularioContas />}
-        <button onClick={() => abrirFormulario()} className='incluir'>
-          <FaPlusCircle size={35} color='#7159c1' />
-        </button>
+        {formulario ? (
+          <FormularioContas />
+        ) : (
+          <button onClick={() => abrirFormulario()} className='incluir'>
+            Cadastre suas contas!
+          </button>
+        )}
       </section>
     </>
   );

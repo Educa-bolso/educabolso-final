@@ -52,7 +52,7 @@ const Feedback = () => {
               <Form className='formulario-feedback'>
                 <label htmlFor='feedback' id='texto'>
                   Deixe aqui sugestões ou reclamações
-                  <br /> para podermos melhorar nossa plataforma!
+                  <br /> para podermos melhorar a nossa plataforma!
                 </label>
                 <br />
                 <Field

@@ -17,7 +17,11 @@ privateRoutes.get('/users', ensureAuthenticated, UserController.show);
 privateRoutes.put('/users', ensureAuthenticated, UserController.update);
 
 // delete user
-privateRoutes.delete('/users', ensureAuthenticated, UserController.delete);
+privateRoutes.delete(
+  '/users/:user_id',
+  ensureAuthenticated,
+  UserController.delete
+);
 
 /* === ROUTES PRIVATE ACCOUNTS === */
 privateRoutes.get('/accounts', ensureAuthenticated, AccountController.index);

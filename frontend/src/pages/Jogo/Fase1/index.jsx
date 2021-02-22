@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { Link, useHistory } from 'react-router-dom';
-import { FaChevronLeft, FaWindowClose } from 'react-icons/fa';
+import { FaChevronLeft } from 'react-icons/fa';
 import { GoRuby } from 'react-icons/go';
 
 import notification from '../../../utils/notification';
@@ -41,21 +41,23 @@ const Fase1 = () => {
     pegarQuestoes();
   }, []);
 
-  function fecharFeedbackQuestao() {
+  /*function fecharFeedbackQuestao() {
     setRespostaIncorreta(false);
 
     if (questaoAtual < dadosQuestoes.length) {
       setQuestaoAtual(questaoAtual + 1);
     }
-  }
+  }*/
 
-  function manipulandoResposta(resposta, textoFeedback, textoResposta) {
+  function manipulandoResposta(resposta, textoFeedback, textoResposta, e) {
     setBarraProgresso(barraProgresso + calculoPorcentagem);
 
     if (questaoAtual < dadosQuestoes.length) {
       if (resposta) {
         setPontos(pontos + 1);
         setRespostaCorreta(true);
+
+        e.target.classList.add('correta');
 
         setTimeout(() => {
           setQuestaoAtual(questaoAtual + 1);
@@ -66,10 +68,12 @@ const Fase1 = () => {
         setFeedback(textoFeedback);
         setTextoRespostaCorreta(textoResposta);
 
+        e.target.classList.add('incorreta');
+
         setTimeout(() => {
           setQuestaoAtual(questaoAtual + 1);
           setRespostaIncorreta(false);
-        }, 3000);
+        }, 10000);
       }
     }
   }
@@ -138,7 +142,8 @@ const Fase1 = () => {
                   manipulandoResposta(
                     resposta.correta,
                     resposta.feedback,
-                    resposta.resposta_correta
+                    resposta.resposta_correta,
+                    e
                   )
                 }
               >
@@ -183,10 +188,6 @@ const Fase1 = () => {
             <p>
               <span>A resposta correta é:</span> {textoRespostaCorreta}
             </p>
-
-            <button onClick={() => fecharFeedbackQuestao()}>
-              <FaWindowClose size={30} color='#888' />
-            </button>
           </div>
         </div>
       )}
